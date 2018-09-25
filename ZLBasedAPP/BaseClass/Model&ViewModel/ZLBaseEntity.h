@@ -1,5 +1,5 @@
 //
-//  BaseEntity.h
+//  ZLBaseEntity.h
 //  MobilePaymentOS
 //
 //  Created by admin on 2018/4/24.

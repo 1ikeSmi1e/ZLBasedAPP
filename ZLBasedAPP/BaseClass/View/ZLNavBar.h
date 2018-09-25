@@ -16,7 +16,7 @@
 
 @end
 
-@interface NavBar : UIView
+@interface ZLNavBar : UIView
 
 /** 左侧button*/
 @property (nonatomic,strong, readonly)  UIButton *leftBtn;

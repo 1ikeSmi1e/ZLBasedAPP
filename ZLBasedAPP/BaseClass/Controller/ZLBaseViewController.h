@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NavBar.h"
+#import "ZLNavBar.h"
 #import "NoDataView.h"
 
 typedef enum : NSUInteger {
@@ -27,7 +27,7 @@ typedef enum : NSUInteger {
 
 /*! @abstract 每个导航条都是自定义view，系统的被隐藏了
  */
-@property (nonatomic, weak)    NavBar *navBar;
+@property (nonatomic, weak)    ZLNavBar *navBar;
 - (void)showNoDataView;
 - (void)hideNoDataView;
 

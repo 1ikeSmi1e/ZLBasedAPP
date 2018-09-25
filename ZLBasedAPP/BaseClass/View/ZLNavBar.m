@@ -1,13 +1,10 @@
 //
-//  NavBar.m
+//  ZLNavBar.m
 //  SP2P_9
 //
-#import "NavBar.h"
-#import "UIColor+custom.h"
-#import "Macros_AJ.h"
-#import "MyTools.h"
+#import "ZLNavBar.h"
 
-@interface NavBar ()
+@interface ZLNavBar ()
 
 
 /**  中间title*/
@@ -15,7 +12,7 @@
 
 @end
 
-@implementation NavBar
+@implementation ZLNavBar
 
 - (void)setTypeWhite:(BOOL)typeWhite
 {
@@ -95,7 +92,7 @@
 - (id)initWithTitle:(NSString *)title leftName:(NSString *)leftName rightName:(NSString *)rightName delegate:(id<NavBarDelegate>)delegate
 {
     UIViewController *controller = (UIViewController *)delegate;
-    NavBar *bar = [self initWithFrame:CGRectMake(0, 0, MSWIDTH, 64) WithTitle:title WithleftName:leftName WithRightName:rightName];
+    ZLNavBar *bar = [self initWithFrame:CGRectMake(0, 0, MSWIDTH, 64) WithTitle:title WithleftName:leftName WithRightName:rightName];
     [controller.view addSubview:bar];
     bar.delegate = delegate;
     
