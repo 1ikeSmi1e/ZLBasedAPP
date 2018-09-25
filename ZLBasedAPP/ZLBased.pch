@@ -1,0 +1,29 @@
+//
+//  ZLBased.pch
+//  ZLBasedAPP
+//
+//  Created by admin on 2018/9/25.
+//  Copyright © 2018年 zlbased. All rights reserved.
+//
+
+#ifndef ZLBased_pch
+#define ZLBased_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#import <UIKit/UIKit.h>
+
+
+#import "AppDelegate.h"
+#import "AJExtension.h"
+#import "ZLNavigationController.h"
+#import "ZLTabBarController.h"
+#import "ZLBaseEntity.h"
+
+#import "AppDefaultUtil.h"
+
+#import "MJExtension.h"         //字典和模型工具类
+#import "MJRefresh.h"
+#import "Masonry.h"
+#import "NSDate+BRAdd.h"
+#endif /* ZLBased_pch */
