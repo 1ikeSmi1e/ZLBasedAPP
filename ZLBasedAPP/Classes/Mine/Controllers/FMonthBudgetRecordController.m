@@ -97,7 +97,7 @@ static NSString * const reuseIdentifier = @"FMonthBudgetRecordCell";
 }
 
 - (void)nextItemClick{
-    ShowLightMessage(@"已保存");// 实际在viewDidDisappear方法统一保存了
+    [SVProgressHUD showImage:kSuccessImage status:@"已保存"];// 实际在viewDidDisappear方法统一保存了
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self.navigationController popViewControllerAnimated:YES];
     });
@@ -113,6 +113,7 @@ static NSString * const reuseIdentifier = @"FMonthBudgetRecordCell";
             
            ShowLightMessage(@"保存失败！未登录！");
         }else{
+            
             AppDelegateInstance.aFAccountCategaries.expensesTypeArr = [self.dataArray mutableCopy];
             [FAccountRecordSaveTool saveAccountCategaries];
         }

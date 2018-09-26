@@ -109,7 +109,7 @@ static NSString * const reuseIdentifier = @"FEditFirstTypeCell";
     firstBena.subTypeArr = self.dataArray.mutableCopy;
     firstBena.budget = self.bugetF.text.doubleValue;
     
-    ShowLightMessage(@"已保存");
+    [SVProgressHUD showImage:kSuccessImage status:@"已保存"];
 }
 
 - (void)viewDidDisappear:(BOOL)animated{

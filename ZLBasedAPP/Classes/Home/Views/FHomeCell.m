@@ -12,7 +12,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
+    self.imageView.image = nil;
+    self.titleL.text = nil;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

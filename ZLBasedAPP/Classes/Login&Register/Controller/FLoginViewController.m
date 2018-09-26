@@ -235,7 +235,7 @@
     
     NSString *password1 = [NSString encrypt3DES:_pwdInput.inputField.text key:DESkey];
     if ([FUsersTool loginUser:_phoneInput.inputField.text andPassword:password1]) {
-        [SVProgressHUD showImage:nil status:@"成功登录"];
+        [SVProgressHUD showImage:kSuccessImage status:@"成功登录"];
         [self loginSuccess];
     }else {
         [SVProgressHUD showImage:nil status:@"用户名或密码错误"];

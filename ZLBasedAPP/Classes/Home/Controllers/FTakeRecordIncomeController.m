@@ -59,7 +59,7 @@
 {
     // 先保存，再翻页
     if ([self saveRecord]) {
-        ShowLightMessage(@"已保存");
+        [SVProgressHUD showImage:kSuccessImage status:@"已保存"];
         [[NSNotificationCenter defaultCenter] postNotificationName:FToolUserDidSaveARecordNotification object:nil];
 
         NSString *subtypeString = kCATransitionFromBottom;
@@ -107,7 +107,7 @@
 - (void)saveBtnClick:(UIButton *)sender
 {
     if ([self saveRecord]) {
-        ShowLightMessage(@"已保存");
+        [SVProgressHUD showImage:kSuccessImage status:@"已保存"];
        
         [[NSNotificationCenter defaultCenter] postNotificationName:FToolUserDidSaveARecordNotification object:nil];
 

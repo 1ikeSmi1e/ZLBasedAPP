@@ -16,6 +16,7 @@
 #import "FHomeNewsCell.h"
 #import "UIImageView+WebCache.h"
 #import "FWebController.h"
+#import "ProductItem.h"
 
 #define baseUrl @"https://wechat.meipenggang.com"
 @interface FHomeViewController ()
@@ -31,7 +32,10 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     
     [self initView];
     
-    self.dataArray = @[@"最新利率", @"记一笔"].mutableCopy;
+    ProductItem *itme1 = [ProductItem itemWithTitle:@"利率看板" icon:@"Home_interest"];
+    ProductItem *itme2 = [ProductItem itemWithTitle:@"记一笔" icon:@"Home_takeRecord"];
+    
+    self.dataArray = @[itme1, itme2].mutableCopy;
     self.header.imageURLStringsGroup = @[
 //                                         @"https://static.weijinzaixian.com/ad_0603403dc18654ec40c34a63c5eb5dd8.jpg",
                                          @"https://static.weijinzaixian.com/ad_15bf2acdc7a3119e37d3fae7bcdbd10f.jpg",
@@ -126,7 +130,7 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     if (indexPath.row >=2) {
         return 90;
     }
-    return 50.f;
+    return 55.f;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -149,8 +153,10 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
         
         
         FHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+        ProductItem *itme1 = self.dataArray[indexPath.row];
         
-        cell.textLabel.text = self.dataArray[indexPath.row];
+        cell.titleL.text = itme1.title;
+        cell.imgV.image = [UIImage imageNamed:itme1.icon];
         return cell;
     }
 }

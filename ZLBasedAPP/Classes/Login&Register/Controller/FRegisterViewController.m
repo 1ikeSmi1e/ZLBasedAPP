@@ -314,7 +314,7 @@
         [SVProgressHUD showImage:nil status:@"用户已存在"];
     }
     else if ([FUsersTool registUser:_phoneInput.inputField.text andPassword:pwdStr]) {
-        [SVProgressHUD showImage:nil status:@"注册成功"];
+        [SVProgressHUD showImage:kSuccessImage status:@"注册成功"];
         [self.navigationController popViewControllerAnimated:YES];
     }
     

@@ -40,7 +40,7 @@ static NSString * const reuseIdentifier = @"FEditFirstTypeCell";
     NSMutableArray *firstTypeArr = AppDelegateInstance.aFAccountCategaries.expensesTypeArr;
     firstTypeArr = self.dataArray.mutableCopy;
     
-    ShowLightMessage(@"已保存");
+    [SVProgressHUD showImage:kSuccessImage status:@"已保存"];
     // 写入plist
     NSDictionary *dic = [AppDelegateInstance.aFAccountCategaries mj_JSONObject];
     

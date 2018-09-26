@@ -100,4 +100,12 @@
     //    view.tag = 1000999;
 }
 
+- (NSMutableArray *)dataArray
+{
+    if (!_dataArray) {
+        self.dataArray = [NSMutableArray array];
+        
+    }
+    return _dataArray;
+}
 @end

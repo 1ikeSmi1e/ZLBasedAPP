@@ -102,7 +102,7 @@
         self.subType.name = self.nameF.text;
         self.subType.iconName = self.iconName;
         [self.view endEditing:YES];
-        ShowLightMessage(@"已保存");
+        [SVProgressHUD showImage:kSuccessImage status:@"已保存"];
     }
 }
 

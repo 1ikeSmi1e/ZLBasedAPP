@@ -35,7 +35,7 @@
         
         self.backgroundColor = [UIColor whiteColor];
         // 顶部广告业
-        SDCycleScrollView *adScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, MSWIDTH, cycleH) delegate:self placeholderImage:[UIImage imageNamed:@"Banner_Bitmap"]];
+        SDCycleScrollView *adScrollView = [SDCycleScrollView cycleScrollViewWithFrame:CGRectMake(0, 0, MSWIDTH, cycleH) delegate:self placeholderImage:kDefalutImage];
         adScrollView.currentPageDotImage = [UIImage imageNamed:@"Dot_current"];
         adScrollView.pageDotImage = [UIImage imageNamed:@"Dot_normal"];;
         adScrollView.pageControlAliment = SDCycleScrollViewPageContolAlimentCenter;

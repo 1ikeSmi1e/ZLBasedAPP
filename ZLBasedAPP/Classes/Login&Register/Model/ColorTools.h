@@ -12,7 +12,7 @@
 //设置RGB颜色值
 #define SETCOLOR(R,G,B,A)	[UIColor colorWithRed:(CGFloat)R/255 green:(CGFloat)G/255 blue:(CGFloat)B/255 alpha:A]
 
-#define KColor  [ColorTools colorWithHexString:@"#195a9c"]
+#define KColor  [ColorTools colorWithHexString:@"#3296F0"]
 // 每个View背景色值
 #define KblackgroundColor  [ColorTools colorWithHexString:@"#f0f0f0"]
 // 登录框 边框色值

@@ -13,7 +13,7 @@
 #define AJWhiteColor [UIColor whiteColor]
 // 淡灰色背景颜色
 #define AJGrayBackgroundColor [UIColor groupTableViewBackgroundColor]
-#define NavgationColor  RGB(255,102,0)
+#define NavgationColor  UIColor.ys_blue
 #define GARYCOL [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1.0f]
 #define BACKGRACOL [UIColor colorWithRed:245/255.0 green:245/255.0 blue:250/255.0 alpha:1.0f]
 #define TITLEGRAYCOL [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1.0f]

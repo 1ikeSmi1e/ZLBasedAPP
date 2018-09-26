@@ -26,6 +26,10 @@
 
 //默认图、占位图
 #define kDefalutImage   [UIImage imageNamed:@"news_image_default"]
+//成功图标
+#define kSuccessImage   [UIImage imageNamed:@"Success"]
+
+
 // 系统版本判断
 #define isIOS9later [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){9,0,0}]
 #define isIOS10later [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){10,0,0}]
