@@ -171,7 +171,7 @@ static BOOL isProduction = NO;
     if (!userInfo) {
         return;
     }
-    
+    [AppDefaultUtil setLastLoginTime];// 保存上次登录时间
     // 为默认用户专门生成预算
     if ([userInfo.phone isEqualToString:defName]) {
         for (FFirstType *expandseFirstType in self.aFAccountCategaries.expensesTypeArr) {

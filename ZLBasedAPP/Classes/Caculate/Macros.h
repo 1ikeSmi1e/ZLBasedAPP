@@ -33,7 +33,7 @@
 #define TABLEHEIGHT MSHIGHT-NAVBAR_HEIGHT
 #define MSWIDTH [UIScreen mainScreen].bounds.size.width
 #define MSHIGHT CGRectGetHeight([UIScreen mainScreen].bounds)
-
+#define SINGLE_LINE_WIDTH .5f
 
 #define CHANGETABBAR   @"ChangeTabbarIndex"
 #define CLIENT_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]

@@ -11,6 +11,8 @@
 + (void)setEmailAdress:(NSString *)emailAdress;
 + (NSString *)getEmailAdress;
 
++ (void)setLastLoginTime;
++ (NSDate *)lastLoginTime;
 /**
  单例模式，实例化对象
  */

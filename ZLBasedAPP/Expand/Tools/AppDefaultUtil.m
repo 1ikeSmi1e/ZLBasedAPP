@@ -28,6 +28,7 @@
 #define KEY_LOGSTATE @"logState" //  登录状态
 
 static NSString * const Key_EmailAdress = @"EmailAdress";
+static NSString * const Key_LastLoginTime = @"LastLoginTime";
 @implementation AppDefaultUtil
 
 static NSUserDefaults *defaults;
@@ -66,6 +67,15 @@ static NSUserDefaults *defaults;
     return [defaults objectForKey:Key_EmailAdress];
 }
 
++ (void)setLastLoginTime{
+    NSDate *date = [NSDate date];
+    [defaults setObject:date forKey:Key_LastLoginTime];
+    [defaults synchronize];
+}
+
++ (NSDate *)lastLoginTime{
+    return [defaults objectForKey:Key_LastLoginTime];
+}
 
 // 设置当前的登录状态
 - (void)setLoginState:(BOOL)value

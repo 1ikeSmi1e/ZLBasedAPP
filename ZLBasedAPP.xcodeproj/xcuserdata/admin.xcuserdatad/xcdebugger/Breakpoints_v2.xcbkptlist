@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZLBasedAPP/AppDelegate.m"
-            timestampString = "559633341.198213"
+            timestampString = "559649185.090235"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
@@ -22,7 +22,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZLBasedAPP/Classes/Mine/Controllers/FMonthBudgetRecordController.m"
@@ -32,22 +32,6 @@
             startingLineNumber = "117"
             endingLineNumber = "117"
             landmarkName = "-viewDidDisappear:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZLBasedAPP/Classes/Mine/Controllers/FMonthBudgetRecordController.m"
-            timestampString = "559632292.643296"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,7 +154,7 @@
                   moduleName = "ZLBasedAPP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Swift%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/ZLBasedAPP/ZLBasedAPP/Classes/Mine/Controllers/FMyIncomeRecordController.m"
-                  timestampString = "559635701.215108"
+                  timestampString = "559644888.044632"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
@@ -185,7 +169,7 @@
                   moduleName = "ZLBasedAPP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Swift%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/ZLBasedAPP/ZLBasedAPP/Classes/Mine/Controllers/FMyIncomeRecordController.m"
-                  timestampString = "559635701.217371"
+                  timestampString = "559644888.0472111"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"

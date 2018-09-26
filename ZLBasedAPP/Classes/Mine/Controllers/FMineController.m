@@ -18,6 +18,7 @@
 #import "FTakeRecordFatherController.h"
 #import "KYWaterWaveView.h"
 #import "ProductItem.h"
+#import "ZLSettingsController.h"
 
 @interface FMineController ()
 @property (nonatomic, weak) KYWaterWaveView *ratioView;
@@ -251,6 +252,11 @@ static NSString * const reuseIdentifier = @"FMineCell";
     
     dateL.attributedText = [MyTools getAttributedStringWithText:dateStr start:3 end:dateStr.length textColor:dateL.textColor textFont:[UIFont systemFontOfSize:20]];
     
+    // 设置
+    CGFloat settingBtnW = 40.f;
+    UIButton *settingBtn = [UIButton buttonWithFrame:RECT(MSWIDTH - 40 -20, 40, settingBtnW, settingBtnW) backgroundColor:nil title:nil titleColor:nil titleFont:0 target:self action:@selector(settingBtnClick:) superview:heaer];
+    [settingBtn setImage:[UIImage imageNamed:@"Mine_ setting"] forState:UIControlStateNormal];
+    
     CGFloat tongViewW = 70;
     CGFloat tongViewH = 130;
     UIView *tongView = [UIView viewWithFrame:RECT(MSWIDTH - tongViewW - 15, dateL.maxY+30, tongViewW, tongViewH) backgroundColor:[UIColor blackColor] superview:heaer];
@@ -262,6 +268,9 @@ static NSString * const reuseIdentifier = @"FMineCell";
     ratioView.y = tongView.y + 50;
     ratioView.height = tongViewH - 50-2;
     self.ratioView = ratioView;
+    
+    UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(ratioViewTapped:)];
+    [self.ratioView addGestureRecognizer:tapGes];
     
     self.incomeL = [self addRowWithY:tongView.y-10  Title:@"本月收入" touchaction:@selector(monthIncomeClick:) superView:heaer];
     self.expandseL = [self addRowWithY:heaer.subviews.lastObject.maxY  Title:@"本月支出" touchaction:@selector(monthExpandseClick:) superView:heaer];
@@ -318,6 +327,17 @@ static NSString * const reuseIdentifier = @"FMineCell";
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
 }
 
+
+// MARK:- 点击了圆筒
+- (void)ratioViewTapped:(UIView *)sender
+{
+    if (self.ratioView.height > self.tongView.height*0.5) {
+        
+        
+        ShowLightMessage(@"您的生活如鱼得水");
+    }
+}
+
 - (void)requestData{
     [MyTools hidenNetworkActitvityIndicator];
     [self.tableView.mj_header endRefreshing];
@@ -338,6 +358,14 @@ static NSString * const reuseIdentifier = @"FMineCell";
     UIImageView *imgV = [UIImageView imageViewWithFrame:RECT(view.width - imgVW - 5, contentL.y, imgVW, contentL.height) imageFile:@"Payments_arrow" superview:view];
     imgV.contentMode = UIViewContentModeScaleAspectFit;
     return contentL;
+}
+
+// MARK:- 设置按钮
+- (void)settingBtnClick:(UIButton *)sender
+{
+    ZLSettingsController *controller = [ZLSettingsController new];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)signOut:(UIButton *)sender
@@ -377,6 +405,5 @@ static NSString * const reuseIdentifier = @"FMineCell";
         
     }
 }
-
 
 @end
