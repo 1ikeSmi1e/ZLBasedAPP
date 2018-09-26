@@ -136,7 +136,11 @@ static NSString * const WJServicePhone = @"0755-29987655";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        
+        ShowLightMessage(@"正在开发中，敬请期待!");
+        if (indexPath.row == 1) {// 账户同步
+            
+//            ShowLightMessage(@"正在开发中，敬请期待!");
+        }
         
     }else if (indexPath.section == 1){
         
