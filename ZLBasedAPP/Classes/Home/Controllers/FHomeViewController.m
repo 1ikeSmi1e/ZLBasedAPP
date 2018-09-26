@@ -122,7 +122,7 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     if (indexPath.row >=2) {
         return 90;
     }
-    return 50.f;
+    return 55.f;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{

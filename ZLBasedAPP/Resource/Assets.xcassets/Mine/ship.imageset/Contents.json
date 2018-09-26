@@ -2,15 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "pc78yM9Ki-1.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
+      "filename" : "pc78yM9Ki.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "DefaultAccountAvatarWithFrame.png",
+      "filename" : "pc78yM9Ki-2.png",
       "scale" : "3x"
     }
   ],

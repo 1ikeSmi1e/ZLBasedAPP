@@ -16,9 +16,11 @@
 #import "FMyIncomeRecordCell.h"// 今日记录
 #import "FMyExpandseRecordCell.h"// 今日记录
 #import "FTakeRecordFatherController.h"
+#import "KYWaterWaveView.h"
+#import "ProductItem.h"
 
 @interface FMineController ()
-@property (nonatomic, weak) UIView *ratioView;
+@property (nonatomic, weak) KYWaterWaveView *ratioView;
 @property (nonatomic, weak) UIView *tongView;
 @property (nonatomic, weak) UILabel *incomeL;
 @property (nonatomic, weak) UILabel *expandseL;
@@ -41,7 +43,10 @@ static NSString * const reuseIdentifier = @"FMineCell";
     [super viewDidLoad];
     
     [self initView];
-    self.dataArray = @[@"收入记录", @"支出记录"].mutableCopy;
+    
+    ProductItem *itme1 = [ProductItem itemWithTitle:@"收入记录" icon:@"Mine_incomRecord"];
+    ProductItem *itme2 = [ProductItem itemWithTitle:@"支出记录" icon:@"Mine_expandseRecord"];
+    self.dataArray = @[itme1, itme2].mutableCopy;
     
     [self updateTodayRecordView];
 }
@@ -170,6 +175,15 @@ static NSString * const reuseIdentifier = @"FMineCell";
     
     self.ratioView.y = MAX(MIN(self.tongView.maxY-2 -self.ratioView.height, self.tongView.maxY-2) , self.tongView.y+2);
     
+    if (self.ratioView.height > self.tongView.height*0.5) {
+        self.ratioView.waveSpeed = 6.0f;
+        self.ratioView.waveAmplitude = 6.0f;
+        [self.ratioView wave];
+    }else{
+        [self.ratioView stop];
+    }
+   
+    
     [self updateTodayRecordView];
 }
 
@@ -224,18 +238,18 @@ static NSString * const reuseIdentifier = @"FMineCell";
     if (@available(iOS 11.0, *)) {
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
     }
-    self.tableView.estimatedRowHeight = self.tableView.rowHeight = 50.f;
+    self.tableView.estimatedRowHeight = self.tableView.rowHeight = 55.f;
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
     
     
     UIView *heaer = [UIView viewWithFrame:RECT(0, 0, MSWIDTH, 260) backgroundColor:NavgationColor superview:nil];
     UILabel *dateL = [UILabel labelWithFrame:RECT(20, 50, 200, 25) text:@"06/2018" textColor:[UIColor ys_blue] textFont:35 textAligment:NSTextAlignmentLeft superview:heaer];
-    dateL.textColor = RGB(162, 119, 63);
+    dateL.textColor = RGB(253, 196, 10);
     NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
     dateFormat.dateFormat = @"MM/yyyy";
     NSString *dateStr = [dateFormat stringFromDate:[NSDate date]];
     
-    dateL.attributedText = [MyTools getAttributedStringWithText:dateStr start:3 end:dateStr.length textColor:RGB(162, 119, 63) textFont:[UIFont systemFontOfSize:20]];
+    dateL.attributedText = [MyTools getAttributedStringWithText:dateStr start:3 end:dateStr.length textColor:dateL.textColor textFont:[UIFont systemFontOfSize:20]];
     
     CGFloat tongViewW = 70;
     CGFloat tongViewH = 130;
@@ -244,7 +258,7 @@ static NSString * const reuseIdentifier = @"FMineCell";
     ViewBorderRadius(tongView, 2, 10, [[UIColor blackColor] colorWithAlphaComponent:.32]);
     self.tongView = tongView;
     
-    UIView *ratioView = [UIView viewWithFrame:RECT(MSWIDTH - tongViewW - 15 + 2, dateL.maxY+30, tongViewW-4, tongViewH-2) backgroundColor:[UIColor ys_lightOrange] superview:heaer];
+    KYWaterWaveView *ratioView = [KYWaterWaveView viewWithFrame:RECT(MSWIDTH - tongViewW - 15 + 2, dateL.maxY+30, tongViewW-4, tongViewH-2) backgroundColor:RGB(253, 196, 10) superview:heaer];
     ratioView.y = tongView.y + 50;
     ratioView.height = tongViewH - 50-2;
     self.ratioView = ratioView;
@@ -341,7 +355,10 @@ static NSString * const reuseIdentifier = @"FMineCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     FMineCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-    cell.textLabel.text = self.dataArray[indexPath.row];
+    ProductItem *itme1 = self.dataArray[indexPath.row];
+    
+    cell.titleL.text = itme1.title;
+    cell.imgV.image = [UIImage imageNamed:itme1.icon];
     return cell;
 }
 

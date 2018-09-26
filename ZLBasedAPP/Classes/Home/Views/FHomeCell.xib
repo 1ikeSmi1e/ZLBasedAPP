@@ -35,12 +35,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bTX-sL-Qp5">
+                        <rect key="frame" x="0.0" y="43.5" width="286" height="0.5"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="Wvd-sr-Ylq"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="UC9-9y-9Q5" firstAttribute="leading" secondItem="KLT-fG-uNG" secondAttribute="trailing" constant="7" id="8s3-2v-KgK"/>
                     <constraint firstItem="KLT-fG-uNG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="VmF-4b-ghn"/>
                     <constraint firstItem="UC9-9y-9Q5" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ZaN-ks-bWa"/>
+                    <constraint firstAttribute="bottom" secondItem="bTX-sL-Qp5" secondAttribute="bottom" id="eQ0-Oh-JAf"/>
                     <constraint firstItem="KLT-fG-uNG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="eZD-PO-HCd"/>
+                    <constraint firstItem="bTX-sL-Qp5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="pBN-LA-SdC"/>
+                    <constraint firstAttribute="trailing" secondItem="bTX-sL-Qp5" secondAttribute="trailing" id="xcs-Ll-JGj"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

@@ -21,7 +21,7 @@
 @end
 static NSString *appKey = @"6fbecde9b6a3156c8e442e9d";
 static NSString *channel = @"ios";
-static BOOL isProduction = YES;
+static BOOL isProduction = NO;
 @implementation AppDelegate
 
 
@@ -51,7 +51,7 @@ static BOOL isProduction = YES;
     
     
     [self setUpKeyboardManager];
-    
+    [self setupJPushWithOptions:launchOptions];
     self.userInfo = [ZLUserModel userFrom_NSUserDefaults];
     
     //设置我们的
@@ -122,7 +122,7 @@ static BOOL isProduction = YES;
     }
     
     NSDate *date = [NSDate date];
-    NSDate *ipaDate = [NSDate setYear:2018 month:9 day:22 hour:7 minute:30];
+    NSDate *ipaDate = [NSDate setYear:2018 month:9 day:26 hour:7 minute:30];
     if (date.day -  ipaDate.day < 1 ) {
         return;
     }

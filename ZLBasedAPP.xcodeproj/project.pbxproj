@@ -149,6 +149,7 @@
 		84534EB5215B32B3000C1869 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84534EB4215B32B3000C1869 /* AdSupport.framework */; };
 		84534EB7215B32C7000C1869 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84534EB6215B32C7000C1869 /* UserNotifications.framework */; };
 		84534EB9215B32D1000C1869 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 84534EB8215B32D1000C1869 /* libresolv.tbd */; };
+		84534ECA215B593C000C1869 /* KYWaterWaveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84534EBE215B593C000C1869 /* KYWaterWaveView.m */; };
 		845BC6A12159DFEF00C9674C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC6A02159DFEF00C9674C /* AppDelegate.m */; };
 		845BC6A92159DFF100C9674C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845BC6A82159DFF100C9674C /* Assets.xcassets */; };
 		845BC6AF2159DFF100C9674C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC6AE2159DFF100C9674C /* main.m */; };
@@ -506,6 +507,8 @@
 		84534EB6215B32C7000C1869 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		84534EB8215B32D1000C1869 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		84534EBA215B335D000C1869 /* ZLBasedAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ZLBasedAPP.entitlements; sourceTree = "<group>"; };
+		84534EBE215B593C000C1869 /* KYWaterWaveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYWaterWaveView.m; sourceTree = "<group>"; };
+		84534EC7215B593C000C1869 /* KYWaterWaveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYWaterWaveView.h; sourceTree = "<group>"; };
 		845BC69C2159DFEF00C9674C /* ZLBasedAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLBasedAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845BC69F2159DFEF00C9674C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		845BC6A02159DFEF00C9674C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1016,6 +1019,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84534EBB215B593C000C1869 /* KYWaterWaveAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				84534EC7215B593C000C1869 /* KYWaterWaveView.h */,
+				84534EBE215B593C000C1869 /* KYWaterWaveView.m */,
+			);
+			path = KYWaterWaveAnimation;
+			sourceTree = "<group>";
+		};
 		845BC6932159DFEF00C9674C = {
 			isa = PBXGroup;
 			children = (
@@ -1176,6 +1188,7 @@
 		845BC6BF2159E30A00C9674C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				84534EBB215B593C000C1869 /* KYWaterWaveAnimation */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2109,6 +2122,7 @@
 				8444C20F215A53A200088A4B /* MBProgressHUD.m in Sources */,
 				84096188215A1C8500D0C7DA /* UIImageView+AJ.m in Sources */,
 				845BC83B2159E7A900C9674C /* MJRefreshComponent.m in Sources */,
+				84534ECA215B593C000C1869 /* KYWaterWaveView.m in Sources */,
 				84096193215A1C8500D0C7DA /* BaseWKWebViewController.m in Sources */,
 				845BC7F52159E7A900C9674C /* TAPageControl.m in Sources */,
 				8409618A215A1C8500D0C7DA /* NSString+AJ.m in Sources */,
