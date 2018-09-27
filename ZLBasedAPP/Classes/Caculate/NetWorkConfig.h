@@ -25,8 +25,8 @@
 #define NK_MONEY_LESS -110
 
 
-#define AppleID         @"1072288702"
-#define AppDownloadURL  @"https://itunes.apple.com/cn/app/id1072288702"
+#define AppleID         @"1437512622"
+#define AppDownloadURL  @"https://itunes.apple.com/cn/app/id1437512622?mt=8"
 
 //是否为测试环境
 #define IS_TEST 0

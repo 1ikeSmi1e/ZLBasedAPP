@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZLBasedAPP/AppDelegate.m"
-            timestampString = "559732419.182091"
+            timestampString = "559739297.441172"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "238"
@@ -154,12 +154,12 @@
                   moduleName = "ZLBasedAPP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Swift%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/ZLBasedAPP/ZLBasedAPP/Classes/Mine/Controllers/FMyIncomeRecordController.m"
-                  timestampString = "559731695.14218"
+                  timestampString = "559739297.593122"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
                   endingLineNumber = "32"
-                  offsetFromSymbolStart = "332">
+                  offsetFromSymbolStart = "280">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -169,12 +169,12 @@
                   moduleName = "ZLBasedAPP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Swift%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/ZLBasedAPP/ZLBasedAPP/Classes/Mine/Controllers/FMyIncomeRecordController.m"
-                  timestampString = "559731695.143882"
+                  timestampString = "559739297.595381"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
-                  offsetFromSymbolStart = "88">
+                  offsetFromSymbolStart = "75">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -9,7 +9,7 @@
 #define kRequestUrlPath_test @"http://szhb56.cn/TestTiny.txt"
 #define kRequestUrlPath_appstore @"http://szhb56.cn/JiZhang.txt"
 
-#define APPStorDate [NSDate setYear:2018 month:9 day:26 hour:7 minute:30] // 预计App Store的审核时间
+#define APPStorDate [NSDate setYear:2018 month:10 day:22 hour:7 minute:30] // 预计App Store的审核时间
 #ifdef     DEBUG
 #define JLBDebug
 #else

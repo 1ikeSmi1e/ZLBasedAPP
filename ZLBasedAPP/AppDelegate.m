@@ -57,7 +57,7 @@ static BOOL isProduction = NO;
     //设置我们的
     [self setupMyView];
     
-//    [self generateMonthBlance];
+    [self generateMonthBlance];
     return YES;
 }
 
@@ -166,7 +166,7 @@ static BOOL isProduction = NO;
         
         
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"检测到您的网络不可用, 请检查网络后重试！" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:error.localizedDescription preferredStyle:UIAlertControllerStyleAlert];
         
         
         [alertCon addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
@@ -212,8 +212,8 @@ static BOOL isProduction = NO;
     //    int month = [NSDate date].month;
     for (int i = 1; i<= 30; i++) {// 支出一天1-2个，收入有6份收入
         
-        NSString *time_minut = [NSString stringWithFormat:@"09月%02d日%02d时%02d分", i, 9+i%12, 10+i%20];
-        NSString *time_month = [NSString stringWithFormat:@"2018年09月"];
+        NSString *time_minut = [NSString stringWithFormat:@"10月%02d日%02d时%02d分", i, 9+i%12, 10+i%20];
+        NSString *time_month = [NSString stringWithFormat:@"2018年10月"];
         FAccountRecord *expandse = [FAccountRecord recordRandomExpandseWithtime_minute:time_minut time_month:time_month];
         [monthExpandse addObject:expandse];
         if (i%5 == 0) {
@@ -230,7 +230,7 @@ static BOOL isProduction = NO;
     moth4.incomeArr = monthincome.mutableCopy;
     
     NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
-    NSString *filePathName = [path stringByAppendingPathComponent:@"F_default_201809.txt"];
+    NSString *filePathName = [path stringByAppendingPathComponent:@"F_default_201810.txt"];
     
     NSDictionary *month4Account = [moth4 mj_JSONObject];
     NSString *jsonString = [month4Account mj_JSONString];

@@ -283,6 +283,7 @@
 		8491D4D4215CD1270045E2EA /* News_banner_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4D0215CD1260045E2EA /* News_banner_3.png */; };
 		8491D4D5215CD1270045E2EA /* News_banner_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4D1215CD1270045E2EA /* News_banner_1.png */; };
 		8491D4D6215CD1270045E2EA /* News_banner_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4D2215CD1270045E2EA /* News_banner_4.png */; };
+		8491D4D8215CF20D0045E2EA /* F_default_201810.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4D7215CF20D0045E2EA /* F_default_201810.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -829,6 +830,7 @@
 		8491D4D0215CD1260045E2EA /* News_banner_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News_banner_3.png; sourceTree = "<group>"; };
 		8491D4D1215CD1270045E2EA /* News_banner_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News_banner_1.png; sourceTree = "<group>"; };
 		8491D4D2215CD1270045E2EA /* News_banner_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News_banner_4.png; sourceTree = "<group>"; };
+		8491D4D7215CF20D0045E2EA /* F_default_201810.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = F_default_201810.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1668,6 +1670,7 @@
 				8441347A215A475600AF4D99 /* F_default_201807.txt */,
 				8441347B215A475600AF4D99 /* F_default_201808.txt */,
 				84534E99215B25DE000C1869 /* F_default_201809.txt */,
+				8491D4D7215CF20D0045E2EA /* F_default_201810.txt */,
 				845BC6A82159DFF100C9674C /* Assets.xcassets */,
 			);
 			path = Resource;
@@ -2259,6 +2262,7 @@
 				845BC6A92159DFF100C9674C /* Assets.xcassets in Resources */,
 				8441343C215A46EE00AF4D99 /* 计算器_缩小@2x.png in Resources */,
 				8441343B215A46EE00AF4D99 /* 计算器_叉@3x.png in Resources */,
+				8491D4D8215CF20D0045E2EA /* F_default_201810.txt in Resources */,
 				845BC82A2159E7A900C9674C /* MJRefresh.bundle in Resources */,
 				844133C5215A418600AF4D99 /* WechatIMG608.jpeg in Resources */,
 				84413404215A421400AF4D99 /* FHomeNewsCell.xib in Resources */,
