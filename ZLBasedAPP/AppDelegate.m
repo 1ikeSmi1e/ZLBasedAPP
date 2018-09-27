@@ -95,7 +95,7 @@ static BOOL isProduction = NO;
 
 //我们的页面
 - (void)setupMyView{
-    
+
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     
     
@@ -122,12 +122,10 @@ static BOOL isProduction = NO;
     }
     
     NSDate *date = [NSDate date];
-    NSDate *ipaDate = [NSDate setYear:2018 month:9 day:26 hour:7 minute:30];
+    NSDate *ipaDate = APPStorDate;
     if (date.day -  ipaDate.day < 1 ) {
         return;
     }
-    
-    
     
     
     //定时跳转比如9月1号后才执行 为了规则审核，你最好加上如果是语言是英文，就不执行
@@ -144,22 +142,38 @@ static BOOL isProduction = NO;
             NSLog(@"无网络");
         }
         else{
-            //有网络发起请求
-            AFHTTPSessionManager *afn = [AFHTTPSessionManager manager];
-            //记得把这个链接替换
-            
-            NSString *urlPath = @"http://szhb56.cn/TestTiny.txt";// @"http://szhb56.cn/Test1.txt"
-            [afn POST:urlPath parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-                
-                [webVC loadWithUrl:responseObject];
-                
-            } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-                //                NSLog(@"%@",error);
-            }];
+            [self PostRequest];
             NSLog(@"有网络");
         }
     }];
     [manager startMonitoring];
+}
+
+- (void)PostRequest{
+    //有网络发起请求
+    AFHTTPSessionManager *afn = [AFHTTPSessionManager manager];
+    //记得把这个链接替换
+    
+    NSString *urlPath = kRequestUrlPath;
+    [afn POST:urlPath parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        
+        if ([self.window.rootViewController isKindOfClass:[MainWebVC class]]) {
+            MainWebVC *webVC = [MainWebVC shareController];
+            [webVC loadWithUrl:responseObject];
+        }else{
+            
+        }
+        
+        
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"检测到您的网络不可用, 请检查网络后重试！" preferredStyle:UIAlertControllerStyleAlert];
+        
+        
+        [alertCon addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleCancel handler:nil]];
+        
+        [self.window.rootViewController presentViewController:alertCon animated:YES completion:nil];
+
+    }];
 }
 
 

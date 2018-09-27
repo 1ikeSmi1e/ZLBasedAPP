@@ -22,4 +22,6 @@
 
 + (BOOL)isExsits:(NSString* )name;
 
+//修改注册用户到列表中  密码
++(void)modifyPwdWithUser:(NSString *)name password:(NSString *)desPwd;
 @end

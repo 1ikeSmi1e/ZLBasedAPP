@@ -38,4 +38,8 @@
 #define CHANGETABBAR   @"ChangeTabbarIndex"
 #define CLIENT_VERSION [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
 
+
+#define LoginWayPWD @"loginVerifyWay_pwd"
+#define LoginWayFinger @"loginVerifyWay_Finger"
+#define LoginWayhumanFace @"loginVerifyWay_humanFace"
 #endif /* Macros_h */

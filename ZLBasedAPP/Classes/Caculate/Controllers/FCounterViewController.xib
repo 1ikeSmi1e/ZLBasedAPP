@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FCounterViewController">
             <connections>
+                <outlet property="tabelViewHeight" destination="UtG-Td-UVW" id="ChM-m5-pVA"/>
                 <outlet property="tableView" destination="NjG-21-Rpm" id="UY2-CG-zob"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

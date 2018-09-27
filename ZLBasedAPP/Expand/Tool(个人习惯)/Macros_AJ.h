@@ -14,11 +14,17 @@
 #define                 DLOG(...)      NSLog(__VA_ARGS__)
 #define                 DLOG_METHOD    NSLog(@"%s", __func__)
 #define                 DLOGERROR(...) NSLog(@"%@传入数据有误",__VA_ARGS__)
+
+#define JLBDebug
 #else
 #define                 DLOG(...)
 #define                 DLOG_METHOD
 #define                 DLOGERROR(...)
+
+#define JLBRealse
 #endif
+
+
 
 #define ShowSuccessMessage(message)  [SVProgressHUD showImage:[UIImage imageNamed:@"vendor_sendsuccess"] status:message]
 #define ShowLightMessage(message)  [SVProgressHUD showImage:nil status:message]

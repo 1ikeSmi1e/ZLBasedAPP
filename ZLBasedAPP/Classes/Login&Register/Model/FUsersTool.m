@@ -55,9 +55,28 @@
         NSMutableArray *userList = [[NSUserDefaults standardUserDefaults] mutableArrayValueForKey:KEY_UserList];
         NSDictionary *regUser = [NSDictionary dictionaryWithObjectsAndKeys:name,KEY_Name,desPwd, KEY_Pwd, nil];
         [userList addObject:regUser];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         return YES;
     }
     return NO;
+}
+
+//修改注册用户到列表中  密码
++(void)modifyPwdWithUser:(NSString *)name password:(NSString *)desPwd{
+    
+    NSMutableArray *userList = [[NSUserDefaults standardUserDefaults] mutableArrayValueForKey:KEY_UserList];
+    for(NSDictionary *item in userList){
+        //        NSLog(@"item = %@", item);
+        if ([[item objectForKey:KEY_Name] isEqualToString:name]) {
+            [userList removeObject:item];
+            
+            NSDictionary *regUser = [NSDictionary dictionaryWithObjectsAndKeys:name,KEY_Name,desPwd, KEY_Pwd, nil];
+            [userList addObject:regUser];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+            
+            ShowLightMessage(@"密码修改成功!");
+        }
+    }
 }
 
 //用户是否已存在

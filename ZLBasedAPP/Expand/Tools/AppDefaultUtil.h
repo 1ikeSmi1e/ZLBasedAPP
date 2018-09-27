@@ -13,6 +13,10 @@
 
 + (void)setLastLoginTime;
 + (NSDate *)lastLoginTime;
+
++ (void)setLoginVerifyWay:(NSString *)LoginVerifyWay;
++ (NSString *)loginVerifyWay;
+
 /**
  单例模式，实例化对象
  */

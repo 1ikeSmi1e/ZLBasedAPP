@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -56,12 +56,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTw-C7-okq">
+                        <rect key="frame" x="0.0" y="69" width="286" height="0.0"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="0.5" id="g9H-iY-n9R"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="NTw-C7-okq" secondAttribute="bottom" id="9cc-wE-OL4"/>
                     <constraint firstAttribute="bottom" secondItem="RXn-rP-ssy" secondAttribute="bottom" constant="5" id="Qum-UC-d6h"/>
                     <constraint firstItem="ECU-If-jFS" firstAttribute="top" secondItem="L4y-Mn-hQA" secondAttribute="top" constant="10" id="WZ6-Wu-Mai"/>
+                    <constraint firstItem="NTw-C7-okq" firstAttribute="leading" secondItem="L4y-Mn-hQA" secondAttribute="leading" id="dHx-oA-bwX"/>
                     <constraint firstItem="0BT-yQ-gPy" firstAttribute="centerY" secondItem="L4y-Mn-hQA" secondAttribute="centerY" id="eCL-7T-mae"/>
                     <constraint firstItem="V3c-Fz-Huz" firstAttribute="centerY" secondItem="L4y-Mn-hQA" secondAttribute="centerY" id="jhv-6c-L2G"/>
+                    <constraint firstAttribute="trailing" secondItem="NTw-C7-okq" secondAttribute="trailing" id="mCg-bG-2Zg"/>
                     <constraint firstItem="V3c-Fz-Huz" firstAttribute="leading" secondItem="L4y-Mn-hQA" secondAttribute="leadingMargin" constant="8" id="uOU-BR-dUU"/>
                     <constraint firstItem="ECU-If-jFS" firstAttribute="leading" secondItem="V3c-Fz-Huz" secondAttribute="trailing" constant="8" id="uxB-cw-N9G"/>
                     <constraint firstAttribute="trailing" secondItem="0BT-yQ-gPy" secondAttribute="trailing" id="vGz-ua-K66"/>

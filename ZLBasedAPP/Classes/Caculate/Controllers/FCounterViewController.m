@@ -29,6 +29,7 @@ static NSString * const reuseIdentifier = @"FHomeCell";
     ZLNavBar *bar = [[ZLNavBar alloc] initWithTitle:@"计算器" leftName:nil rightName:nil delegate:self];
     bar.leftBtn.hidden = YES;  //主页隐藏返回按钮
     
+    self.tabelViewHeight.constant = bar.maxY;
 //    [_tableView registerClass:[BaseContentCell class] forCellReuseIdentifier:@"RateViewCell"];
  [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
     self.tableView.delegate = self;

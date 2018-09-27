@@ -333,7 +333,6 @@ static NSString * const reuseIdentifier = @"FMineCell";
 {
     if (self.ratioView.height > self.tongView.height*0.5) {
         
-        
         ShowLightMessage(@"您的生活如鱼得水");
     }
 }

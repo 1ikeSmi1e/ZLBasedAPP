@@ -29,12 +29,27 @@
 
 static NSString * const Key_EmailAdress = @"EmailAdress";
 static NSString * const Key_LastLoginTime = @"LastLoginTime";
+static NSString * const Key_LoginVerifyWay = @"LoginVerifyWay";
 @implementation AppDefaultUtil
 
 static NSUserDefaults *defaults;
 + (void)load
 {
     defaults = [NSUserDefaults standardUserDefaults];
+}
+
++ (void)setLoginVerifyWay:(NSString *)LoginVerifyWay{
+    
+    [defaults setObject:LoginVerifyWay forKey:Key_LoginVerifyWay];
+    [defaults synchronize];
+}
++ (NSString *)loginVerifyWay{
+    
+    NSString *loginVerifyWay = [defaults objectForKey:Key_LoginVerifyWay];
+    if (!loginVerifyWay) {
+        loginVerifyWay = LoginWayPWD;
+    }
+    return loginVerifyWay;
 }
 
 

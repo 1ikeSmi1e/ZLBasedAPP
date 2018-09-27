@@ -17,6 +17,7 @@
 #import "UIImageView+WebCache.h"
 #import "FWebController.h"
 #import "ProductItem.h"
+#import "AFNetworking.h"
 
 #define baseUrl @"https://wechat.meipenggang.com"
 @interface FHomeViewController ()
@@ -46,6 +47,10 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self requestData];
 //    });
+    
+   
+    
+    
     
 }
 

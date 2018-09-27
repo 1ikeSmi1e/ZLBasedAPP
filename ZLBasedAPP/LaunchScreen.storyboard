@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch_bg" translatesAutoresizingMaskIntoConstraints="NO" id="phu-cp-6Ni">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Launch_elements" translatesAutoresizingMaskIntoConstraints="NO" id="u44-zX-xQg">
                                 <rect key="frame" x="67" y="170" width="240" height="90"/>
@@ -34,12 +34,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="phu-cp-6Ni" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="5Kh-QJ-S0i"/>
+                            <constraint firstItem="phu-cp-6Ni" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="IMP-eA-MBq"/>
                             <constraint firstItem="u44-zX-xQg" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Jbq-c0-y2U"/>
-                            <constraint firstItem="Juc-fi-yZ4" firstAttribute="top" secondItem="phu-cp-6Ni" secondAttribute="bottom" id="XMI-dq-cjo"/>
+                            <constraint firstItem="phu-cp-6Ni" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UwV-aj-S8H"/>
                             <constraint firstItem="u44-zX-xQg" firstAttribute="top" secondItem="2ig-l6-Ldx" secondAttribute="bottom" constant="150" id="bzo-Kg-D3I"/>
-                            <constraint firstAttribute="trailing" secondItem="phu-cp-6Ni" secondAttribute="trailing" id="eoy-k3-snW"/>
-                            <constraint firstItem="phu-cp-6Ni" firstAttribute="top" secondItem="2ig-l6-Ldx" secondAttribute="bottom" id="l6U-a3-QR1"/>
-                            <constraint firstItem="phu-cp-6Ni" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="ox9-eq-oHW"/>
+                            <constraint firstItem="phu-cp-6Ni" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="yrV-iO-Gfk"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -9,6 +9,7 @@
 #import "FMineController.h"
 #import "FHomeViewController.h"
 #import "FLoginViewController.h"
+#import "ZLTouTiaoNewsController.h"
 
 @interface ZLTabBarController () < UITabBarControllerDelegate>
 
@@ -31,6 +32,12 @@
     ZLNavigationController *nav2 = [[ZLNavigationController alloc] initWithRootViewController:vender];
     [self addChildViewController:nav2];
 
+    
+    ZLTouTiaoNewsController *TiaoNews = [[ZLTouTiaoNewsController alloc] init];
+    TiaoNews.title = @"资讯";
+    ZLNavigationController *nav4 = [[ZLNavigationController alloc] initWithRootViewController:TiaoNews];
+    [self addChildViewController:nav4];
+    
     FMineController *personal = [[FMineController alloc] init];
     personal.title = @"我的";
     ZLNavigationController *nav3 = [[ZLNavigationController alloc] initWithRootViewController:personal];
@@ -47,6 +54,8 @@
     UITabBarItem *tabbarItem2 = [self getBarItemWithTitle:@"我的" imageName:@"Tabbar_my_unselected"];
     nav3.tabBarItem = tabbarItem2;
 
+    UITabBarItem *tabbarItem3 = [self getBarItemWithTitle:@"资讯" imageName:@"Tabbar_News_unselected"];
+    nav4.tabBarItem = tabbarItem3;
     self.delegate = self;
 
 }

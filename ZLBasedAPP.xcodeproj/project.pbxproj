@@ -273,6 +273,12 @@
 		845BC85D2159E7A900C9674C /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC7E92159E7A900C9674C /* BRAddressModel.m */; };
 		845BC85E2159E7A900C9674C /* BRPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 845BC7EB2159E7A900C9674C /* BRPickerView.bundle */; };
 		845BC85F2159E7A900C9674C /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC7ED2159E7A900C9674C /* BRAddressPickerView.m */; };
+		8491D4B7215C82390045E2EA /* ZLSettingPrivacyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4B5215C82390045E2EA /* ZLSettingPrivacyController.m */; };
+		8491D4B8215C82390045E2EA /* ZLSettingPrivacyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4B6215C82390045E2EA /* ZLSettingPrivacyController.xib */; };
+		8491D4BB215CAFF40045E2EA /* ZLTouTiaoNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4BA215CAFF40045E2EA /* ZLTouTiaoNewsController.m */; };
+		8491D4C1215CB3320045E2EA /* JLBNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4C0215CB3320045E2EA /* JLBNews.m */; };
+		8491D4C5215CC4A10045E2EA /* ZLTouTiaoNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4C3215CC4A10045E2EA /* ZLTouTiaoNewsCell.m */; };
+		8491D4C6215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4C4215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -805,6 +811,16 @@
 		845BC7ED2159E7A900C9674C /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
 		845BC7EE2159E7A900C9674C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		845BC7EF2159E7A900C9674C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		8491D4B4215C82390045E2EA /* ZLSettingPrivacyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLSettingPrivacyController.h; sourceTree = "<group>"; };
+		8491D4B5215C82390045E2EA /* ZLSettingPrivacyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLSettingPrivacyController.m; sourceTree = "<group>"; };
+		8491D4B6215C82390045E2EA /* ZLSettingPrivacyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLSettingPrivacyController.xib; sourceTree = "<group>"; };
+		8491D4B9215CAFF40045E2EA /* ZLTouTiaoNewsController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLTouTiaoNewsController.h; sourceTree = "<group>"; };
+		8491D4BA215CAFF40045E2EA /* ZLTouTiaoNewsController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLTouTiaoNewsController.m; sourceTree = "<group>"; };
+		8491D4BF215CB3320045E2EA /* JLBNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLBNews.h; sourceTree = "<group>"; };
+		8491D4C0215CB3320045E2EA /* JLBNews.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLBNews.m; sourceTree = "<group>"; };
+		8491D4C2215CC4A10045E2EA /* ZLTouTiaoNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLTouTiaoNewsCell.h; sourceTree = "<group>"; };
+		8491D4C3215CC4A10045E2EA /* ZLTouTiaoNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLTouTiaoNewsCell.m; sourceTree = "<group>"; };
+		8491D4C4215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLTouTiaoNewsCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1152,6 +1168,9 @@
 				84534EE4215B9051000C1869 /* ZLSettingFeedBackController.m */,
 				84534EF0215B9D34000C1869 /* PreviewBigImageViewController.h */,
 				84534EF1215B9D34000C1869 /* PreviewBigImageViewController.m */,
+				8491D4B4215C82390045E2EA /* ZLSettingPrivacyController.h */,
+				8491D4B5215C82390045E2EA /* ZLSettingPrivacyController.m */,
+				8491D4B6215C82390045E2EA /* ZLSettingPrivacyController.xib */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -1252,7 +1271,7 @@
 			children = (
 				845BC6B82159E30A00C9674C /* Home */,
 				845BC6C32159E30A00C9674C /* Caculate */,
-				845BC6D02159E30A00C9674C /* Live */,
+				845BC6D02159E30A00C9674C /* News */,
 				845BC6D52159E30A00C9674C /* Mine */,
 				845BC6DA2159E30A00C9674C /* Login&Register */,
 				845BC6BD2159E30A00C9674C /* General */,
@@ -1443,19 +1462,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		845BC6D02159E30A00C9674C /* Live */ = {
+		845BC6D02159E30A00C9674C /* News */ = {
 			isa = PBXGroup;
 			children = (
 				845BC6D12159E30A00C9674C /* Model */,
 				845BC6D22159E30A00C9674C /* Controllers */,
 				845BC6D42159E30A00C9674C /* Views */,
 			);
-			path = Live;
+			path = News;
 			sourceTree = "<group>";
 		};
 		845BC6D12159E30A00C9674C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8491D4BF215CB3320045E2EA /* JLBNews.h */,
+				8491D4C0215CB3320045E2EA /* JLBNews.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1463,6 +1484,8 @@
 		845BC6D22159E30A00C9674C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8491D4B9215CAFF40045E2EA /* ZLTouTiaoNewsController.h */,
+				8491D4BA215CAFF40045E2EA /* ZLTouTiaoNewsController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1470,6 +1493,9 @@
 		845BC6D42159E30A00C9674C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8491D4C2215CC4A10045E2EA /* ZLTouTiaoNewsCell.h */,
+				8491D4C3215CC4A10045E2EA /* ZLTouTiaoNewsCell.m */,
+				8491D4C4215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -2233,6 +2259,7 @@
 				84413439215A46EE00AF4D99 /* 计算器_放大@3x.png in Resources */,
 				84534E9A215B25DF000C1869 /* F_default_201809.txt in Resources */,
 				84413406215A437300AF4D99 /* LaunchScreen.storyboard in Resources */,
+				8491D4C6215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib in Resources */,
 				84413481215A475600AF4D99 /* AccoutCategeries.plist in Resources */,
 				8441343E215A46EE00AF4D99 /* 计算器_叉@2x.png in Resources */,
 				84534EDF215B7B13000C1869 /* ZLSettingNormalCell.xib in Resources */,
@@ -2245,6 +2272,7 @@
 				8441343D215A46EE00AF4D99 /* 计算器_缩小@3x.png in Resources */,
 				84413477215A472E00AF4D99 /* FMineCell.xib in Resources */,
 				8441343A215A46EE00AF4D99 /* 计算器_放大@2x.png in Resources */,
+				8491D4B8215C82390045E2EA /* ZLSettingPrivacyController.xib in Resources */,
 				84413422215A46AA00AF4D99 /* Counters.storyboard in Resources */,
 				841BA706215BA24C00B14ADC /* TZImagePickerController.bundle in Resources */,
 			);
@@ -2259,6 +2287,7 @@
 			files = (
 				845BC8012159E7A900C9674C /* MJFoundation.m in Sources */,
 				845BC8512159E7A900C9674C /* SDWebImageDownloaderOperation.m in Sources */,
+				8491D4C1215CB3320045E2EA /* JLBNews.m in Sources */,
 				844133D6215A41C100AF4D99 /* FHomeViewController.m in Sources */,
 				845BC8382159E7A900C9674C /* MJRefreshHeader.m in Sources */,
 				84096185215A1C8500D0C7DA /* WSPlaceholderTextView.m in Sources */,
@@ -2303,6 +2332,7 @@
 				845BC83E2159E7A900C9674C /* SPPageMenu.m in Sources */,
 				845BC80A2159E7A900C9674C /* IQToolbar.m in Sources */,
 				845BC7FC2159E7A900C9674C /* MJExtensionConst.m in Sources */,
+				8491D4BB215CAFF40045E2EA /* ZLTouTiaoNewsController.m in Sources */,
 				841BA708215BA24C00B14ADC /* TZImageManager.m in Sources */,
 				844133E9215A41DF00AF4D99 /* FAddFirstTypeController.m in Sources */,
 				8441349B215A499500AF4D99 /* InputView.m in Sources */,
@@ -2436,6 +2466,7 @@
 				84413471215A472E00AF4D99 /* FMonthBudgetRecordCell.m in Sources */,
 				845BC8192159E7A900C9674C /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				84413473215A472E00AF4D99 /* FMineCell.m in Sources */,
+				8491D4B7215C82390045E2EA /* ZLSettingPrivacyController.m in Sources */,
 				845BC85C2159E7A900C9674C /* BRBaseView.m in Sources */,
 				844133DC215A41C100AF4D99 /* FTakeRecordExpandController.m in Sources */,
 				84413463215A472400AF4D99 /* FAccountCategaries.m in Sources */,
@@ -2468,6 +2499,7 @@
 				84413453215A470C00AF4D99 /* FMyIncomeRecordController.m in Sources */,
 				84413440215A46EE00AF4D99 /* YGCTradeWindow.m in Sources */,
 				845BC8582159E7A900C9674C /* UIButton+WebCache.m in Sources */,
+				8491D4C5215CC4A10045E2EA /* ZLTouTiaoNewsCell.m in Sources */,
 				845BC7FE2159E7A900C9674C /* NSObject+MJClass.m in Sources */,
 				845BC81C2159E7A900C9674C /* MASConstraintMaker.m in Sources */,
 				845BC8112159E7A900C9674C /* IQNSArray+Sort.m in Sources */,

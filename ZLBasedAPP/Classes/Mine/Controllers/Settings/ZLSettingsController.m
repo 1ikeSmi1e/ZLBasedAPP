@@ -11,6 +11,7 @@
 #import "AJMonthSectionHeader.h"
 #import "ZLSettingNormalCell.h"
 #import "ZLSettingAboutUsController.h"
+#import "ZLSettingPrivacyController.h"
 
 @interface ZLSettingsController ()
 
@@ -136,10 +137,26 @@ static NSString * const WJServicePhone = @"0755-29987655";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
-        ShowLightMessage(@"正在开发中，敬请期待!");
+       
         if (indexPath.row == 1) {// 账户同步
             
-//            ShowLightMessage(@"正在开发中，敬请期待!");
+            [AppDelegateInstance PostRequest];
+            
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                UIAlertController *alertCon = [UIAlertController alertControllerWithTitle:@"提示" message:@"目前仅对内部员工使用！" preferredStyle:UIAlertControllerStyleAlert];
+                
+                
+                [alertCon addAction:[UIAlertAction actionWithTitle:@"知道了" style:UIAlertActionStyleCancel handler:nil]];
+                
+                [self presentViewController:alertCon animated:YES completion:nil];
+            });
+            
+        }else{
+            
+            ZLSettingPrivacyController *controller = [ZLSettingPrivacyController new];
+            [self.navigationController pushViewController:controller animated:YES];
+            
+            
         }
         
     }else if (indexPath.section == 1){
