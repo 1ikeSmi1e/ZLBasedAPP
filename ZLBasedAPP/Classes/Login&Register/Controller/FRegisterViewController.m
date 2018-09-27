@@ -81,7 +81,7 @@
 	//文本标题
 	UILabel *titleLabel = [UILabel new];
 	titleLabel.text = @"会理财, 懂生活";
-	titleLabel.textColor = baseNavColor;
+	titleLabel.textColor = UIColor.ys_blue;
 	titleLabel.font = [UIFont fontWithName:@"Arial" size:13];
 	titleLabel.textAlignment = NSTextAlignmentCenter;
 	[_superView addSubview:titleLabel];
@@ -108,7 +108,7 @@
     _phoneLabel.text = @"请输入正确的手机号码";
     _phoneLabel.backgroundColor = [UIColor clearColor];
     _phoneLabel.font = [UIFont systemFontOfSize:13.0f];
-    _phoneLabel.textColor = baseNavColor;
+    _phoneLabel.textColor = UIColor.ys_blue;
     _phoneLabel.hidden = YES;
 	[_superView addSubview:_phoneLabel];
 	[_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -193,7 +193,8 @@
 	}];
 	
 	//注册按钮
-    _registBtn = [UIButton buttonWithFrame:CGRectZero font:15.0 titleColor:[UIColor whiteColor] normalImage:@"regist_btn_lighted" disableImage:@"regist_btn_normal" target:self action:@selector(registerAction) title:@"注 册" superview:_superView];
+     _registBtn = [AJCornerCircle buttonWithFrame:CGRectZero backgroundColor:UIColor.ys_blue title:@"注 册" titleColor:AJWhiteColor titleFont:15.0 target:self action:@selector(registerAction) superview:_superView];
+//    _registBtn = [UIButton buttonWithFrame:CGRectZero font:15.0 titleColor:[UIColor whiteColor] normalImage:@"regist_btn_lighted" disableImage:@"regist_btn_normal" target:self action:@selector(registerAction) title:@"注 册" superview:_superView];
     _registBtn.enabled = NO;
 	[_registBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(_inviteInput.mas_bottom).with.offset(25 * SCALE);
@@ -203,7 +204,7 @@
 	}];
 	
 	//登录按钮
-    _loginBtn = [UIButton buttonWithFrame:CGRectZero font:15.0 titleColor:baseNavColor normalImage:nil disableImage:nil target:self action:@selector(loginBtnClick) title:@"快速登录" superview:_superView];
+    _loginBtn = [UIButton buttonWithFrame:CGRectZero font:15.0 titleColor:UIColor.ys_blue normalImage:nil disableImage:nil target:self action:@selector(loginBtnClick) title:@"快速登录" superview:_superView];
 	[_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.bottom.equalTo(_superView.mas_bottom).with.offset(-30);
 		make.centerX.mas_equalTo(_superView.mas_centerX);
@@ -233,7 +234,7 @@
     }];
     
     //协议按钮 平台注册协议
-    _proctolBtn = [UIButton buttonWithFrame:CGRectZero font:14.0 titleColor:baseNavColor normalImage:nil disableImage:nil target:self action:@selector(proctolBtnAction) title:@"" superview:_superView];
+    _proctolBtn = [UIButton buttonWithFrame:CGRectZero font:14.0 titleColor:UIColor.ys_blue normalImage:nil disableImage:nil target:self action:@selector(proctolBtnAction) title:@"" superview:_superView];
     [_proctolBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(_registBtn.mas_bottom).with.offset(15 * SCALE);
         make.centerX.mas_equalTo(_superView.mas_centerX);

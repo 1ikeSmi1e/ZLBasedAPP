@@ -28,8 +28,7 @@ static NSString * const reuseIdentifier = @"FHomeCell";
     [super viewDidLoad];
     ZLNavBar *bar = [[ZLNavBar alloc] initWithTitle:@"计算器" leftName:nil rightName:nil delegate:self];
     bar.leftBtn.hidden = YES;  //主页隐藏返回按钮
-    
-    self.tabelViewHeight.constant = bar.maxY;
+    self.navBar = bar;
 //    [_tableView registerClass:[BaseContentCell class] forCellReuseIdentifier:@"RateViewCell"];
  [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
     self.tableView.delegate = self;
@@ -40,6 +39,12 @@ static NSString * const reuseIdentifier = @"FHomeCell";
     rowCount = 0;
 }
 
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    
+    self.tabelViewHeight.constant = self.navBar.maxY;
+}
 
 //显示多少组
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

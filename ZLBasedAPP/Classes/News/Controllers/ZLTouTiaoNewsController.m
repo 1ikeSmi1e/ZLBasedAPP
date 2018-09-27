@@ -11,6 +11,7 @@
 #import "HomeHeader.h"
 #import "JLBNews.h"
 #import "ZLTouTiaoNewsCell.h"
+#import "FWebController.h"
 
 @interface ZLTouTiaoNewsController ()
 
@@ -113,9 +114,24 @@ static NSString * const reuseIdentifier = @"ZLTouTiaoNewsCell";
     self.tableView.tableHeaderView = header;
     self.header = header;
     __weak typeof(self) weakSelf = self;
-    header.tapImgBlock = ^(id item){ };
-    self.header.imageURLStringsGroup = @[ @"https://static.weijinzaixian.com/ad_15bf2acdc7a3119e37d3fae7bcdbd10f.jpg",
-                                         @"WechatIMG608.jpeg" ];
+    header.tapImgBlock = ^(id item){
+        
+        NSInteger index = [weakSelf.header.imageURLStringsGroup indexOfObject:item];
+        NSArray *urlArr = @[ @"http://sports.qq.com/a/20180927/000374.htm",
+                             @"http://sports.qq.com/a/20180927/001655.htm?tdsourcetag=s_pctim_aiomsg#p=3",
+                             @"https://new.qq.com/omn/20180927/20180927A0XIJJ.html",
+                             @"https://new.qq.com/omn/20180927/20180927A10DL2.html"];
+        
+        FWebController *controller = [FWebController new];
+        controller.urlStr = urlArr[index];//[NSString stringWithFormat:@"%@/AccountController/wealthinfoNewsDeatil?id=%@", baseUrl, bean.ID];
+        controller.hidesBottomBarWhenPushed = YES;
+        [weakSelf.navigationController pushViewController:controller animated:YES];
+
+    };
+    self.header.imageURLStringsGroup = @[ @"News_banner_1",
+                                         @"News_banner_2",
+                                         @"News_banner_3",
+                                          @"News_banner_4"];
     
     [self addTableViewRefreshHeader];
     [self.tableView registerNib:[UINib nibWithNibName:reuseIdentifier bundle:nil] forCellReuseIdentifier:reuseIdentifier];
@@ -143,35 +159,12 @@ static NSString * const reuseIdentifier = @"ZLTouTiaoNewsCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-//    if (indexPath.row == 1) {
-//
-//        if (!AppDelegateInstance.userInfo) {
-//            //如果未登录，则跳转登录界面
-//            FLoginViewController *loginView = [[FLoginViewController alloc] init];
-//            UINavigationController *loginNVC = [[UINavigationController alloc] initWithRootViewController:loginView];
-//            //        loginView.backType = MyWealth;
-//            [((UINavigationController *)self.tabBarController.selectedViewController) presentViewController:loginNVC animated:YES completion:nil];
-//            return;
-//        }
-//
-//
-//        FTakeRecordFatherController *controller = [[FTakeRecordFatherController alloc] init];
-//        controller.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:controller animated:YES];
-//    } else if (indexPath.row == 0) {
-//
-//        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Counters" bundle:nil];
-//        UIViewController *tenderVC = [homeStoryboard instantiateViewControllerWithIdentifier:@"rateController"];
-//        tenderVC.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:tenderVC animated:YES];
-//    }else{
-//
-//        FHomeNews *bean = self.dataArray[indexPath.row];
-//        FWebController *controller = [FWebController new];
-//        controller.urlStr = [NSString stringWithFormat:@"%@/AccountController/wealthinfoNewsDeatil?id=%@", baseUrl, bean.ID];
-//        controller.hidesBottomBarWhenPushed = YES;
-//        [self.navigationController pushViewController:controller animated:YES];
-//    }
+    JLBNews *news = self.dataArray[indexPath.row];
+    FWebController *controller = [FWebController new];
+    controller.urlStr = news.display_url;//[NSString stringWithFormat:@"%@/AccountController/wealthinfoNewsDeatil?id=%@", baseUrl, bean.ID];
+    controller.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:controller animated:YES];
+
 }
 
 @end

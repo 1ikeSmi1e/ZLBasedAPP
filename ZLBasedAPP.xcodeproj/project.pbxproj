@@ -279,6 +279,10 @@
 		8491D4C1215CB3320045E2EA /* JLBNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4C0215CB3320045E2EA /* JLBNews.m */; };
 		8491D4C5215CC4A10045E2EA /* ZLTouTiaoNewsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4C3215CC4A10045E2EA /* ZLTouTiaoNewsCell.m */; };
 		8491D4C6215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4C4215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib */; };
+		8491D4D3215CD1270045E2EA /* News_banner_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4CF215CD1260045E2EA /* News_banner_2.png */; };
+		8491D4D4215CD1270045E2EA /* News_banner_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4D0215CD1260045E2EA /* News_banner_3.png */; };
+		8491D4D5215CD1270045E2EA /* News_banner_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4D1215CD1270045E2EA /* News_banner_1.png */; };
+		8491D4D6215CD1270045E2EA /* News_banner_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4D2215CD1270045E2EA /* News_banner_4.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -821,6 +825,10 @@
 		8491D4C2215CC4A10045E2EA /* ZLTouTiaoNewsCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLTouTiaoNewsCell.h; sourceTree = "<group>"; };
 		8491D4C3215CC4A10045E2EA /* ZLTouTiaoNewsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLTouTiaoNewsCell.m; sourceTree = "<group>"; };
 		8491D4C4215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLTouTiaoNewsCell.xib; sourceTree = "<group>"; };
+		8491D4CF215CD1260045E2EA /* News_banner_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News_banner_2.png; sourceTree = "<group>"; };
+		8491D4D0215CD1260045E2EA /* News_banner_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News_banner_3.png; sourceTree = "<group>"; };
+		8491D4D1215CD1270045E2EA /* News_banner_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News_banner_1.png; sourceTree = "<group>"; };
+		8491D4D2215CD1270045E2EA /* News_banner_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = News_banner_4.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1650,6 +1658,10 @@
 		845BC6E42159E30A00C9674C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				8491D4D1215CD1270045E2EA /* News_banner_1.png */,
+				8491D4CF215CD1260045E2EA /* News_banner_2.png */,
+				8491D4D0215CD1260045E2EA /* News_banner_3.png */,
+				8491D4D2215CD1270045E2EA /* News_banner_4.png */,
 				8441347C215A475600AF4D99 /* AccoutCategeries.plist */,
 				84413478215A475500AF4D99 /* F_default_201805.txt */,
 				84413479215A475600AF4D99 /* F_default_201806.txt */,
@@ -2243,6 +2255,7 @@
 				845BC8432159E7A900C9674C /* SVProgressHUD.bundle in Resources */,
 				844133D7215A41C100AF4D99 /* FRateViewController.xib in Resources */,
 				84413476215A472E00AF4D99 /* FMyExpandseRecordCell.xib in Resources */,
+				8491D4D6215CD1270045E2EA /* News_banner_4.png in Resources */,
 				845BC6A92159DFF100C9674C /* Assets.xcassets in Resources */,
 				8441343C215A46EE00AF4D99 /* 计算器_缩小@2x.png in Resources */,
 				8441343B215A46EE00AF4D99 /* 计算器_叉@3x.png in Resources */,
@@ -2250,6 +2263,7 @@
 				844133C5215A418600AF4D99 /* WechatIMG608.jpeg in Resources */,
 				84413404215A421400AF4D99 /* FHomeNewsCell.xib in Resources */,
 				84413470215A472E00AF4D99 /* FMyIncomeRecordCell.xib in Resources */,
+				8491D4D5215CD1270045E2EA /* News_banner_1.png in Resources */,
 				845BC85E2159E7A900C9674C /* BRPickerView.bundle in Resources */,
 				845BC80F2159E7A900C9674C /* IQKeyboardManager.bundle in Resources */,
 				84413472215A472E00AF4D99 /* FMonthBudgetRecordCell.xib in Resources */,
@@ -2259,6 +2273,7 @@
 				84413439215A46EE00AF4D99 /* 计算器_放大@3x.png in Resources */,
 				84534E9A215B25DF000C1869 /* F_default_201809.txt in Resources */,
 				84413406215A437300AF4D99 /* LaunchScreen.storyboard in Resources */,
+				8491D4D4215CD1270045E2EA /* News_banner_3.png in Resources */,
 				8491D4C6215CC4A10045E2EA /* ZLTouTiaoNewsCell.xib in Resources */,
 				84413481215A475600AF4D99 /* AccoutCategeries.plist in Resources */,
 				8441343E215A46EE00AF4D99 /* 计算器_叉@2x.png in Resources */,
@@ -2267,6 +2282,7 @@
 				8441347D215A475600AF4D99 /* F_default_201805.txt in Resources */,
 				8441347E215A475600AF4D99 /* F_default_201806.txt in Resources */,
 				8441341C215A46AA00AF4D99 /* FCounterViewController.xib in Resources */,
+				8491D4D3215CD1270045E2EA /* News_banner_2.png in Resources */,
 				844133FD215A421400AF4D99 /* FHomeCell.xib in Resources */,
 				844133FE215A421400AF4D99 /* FEditFirstTypeCell.xib in Resources */,
 				8441343D215A46EE00AF4D99 /* 计算器_缩小@3x.png in Resources */,

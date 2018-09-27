@@ -133,7 +133,7 @@
     marginTop = 0;
     if(_isNew){
         ZLNavBar *bar = [[ZLNavBar alloc] initWithTitle:@"小计算器" leftName:nil rightName:@"" delegate:self];
-        marginTop = 64;
+        marginTop = bar.maxY;
     }
     
     //加阴影- 设置阴影

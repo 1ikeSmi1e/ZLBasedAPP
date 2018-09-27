@@ -75,7 +75,7 @@
 	//文本标题
 	UILabel *titleLabel = [UILabel new];
 	titleLabel.text = @"会理财, 懂生活";
-	titleLabel.textColor = baseNavColor;
+	titleLabel.textColor = UIColor.ys_blue;
 	titleLabel.font = [UIFont fontWithName:@"Arial" size:14];
 	titleLabel.textAlignment = NSTextAlignmentCenter;
 	[_superView addSubview:titleLabel];
@@ -101,7 +101,7 @@
     _phoneLabel.text = @"请输入正确的手机号码";
     _phoneLabel.backgroundColor = [UIColor clearColor];
     _phoneLabel.font = [UIFont systemFontOfSize:13.0f];
-    _phoneLabel.textColor = baseNavColor;
+    _phoneLabel.textColor = UIColor.ys_blue;
     _phoneLabel.hidden = YES;
     [_superView addSubview:_phoneLabel];
 	[_phoneLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -126,7 +126,8 @@
 	}];
 
 	//登录按钮
-    _loginBtn = [UIButton buttonWithFrame:CGRectZero font:15.0 titleColor:[UIColor whiteColor] normalImage:@"regist_btn_lighted" disableImage:@"regist_btn_normal" target:self action:@selector(loginBtnAction) title:@"登录" superview:_superView];
+    _loginBtn =  [AJCornerCircle buttonWithFrame:CGRectZero backgroundColor:UIColor.ys_blue title:@"登录" titleColor:AJWhiteColor titleFont:15.0 target:self action:@selector(loginBtnAction) superview:_superView];
+//    _loginBtn = [AJCornerCircle buttonWithFrame:CGRectZero font:15.0 titleColor:[UIColor whiteColor] normalImage:@"" disableImage:@"regist_btn_normal" target:self action:@selector(loginBtnAction) title:@"登录" superview:_superView];
 	_loginBtn.enabled = NO;
 	[_loginBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(_pwdInput.mas_bottom).with.offset(20 * SCALE);
@@ -137,7 +138,7 @@
 	
 	
 	//注册按钮
-    _registBtn = [UIButton buttonWithFrame:CGRectZero font:15.0 titleColor:baseNavColor normalImage:nil disableImage:nil target:self action:@selector(registBtnClick) title:@"马上注册" superview:_superView];
+    _registBtn = [UIButton buttonWithFrame:CGRectZero font:15.0 titleColor:UIColor.ys_blue normalImage:nil disableImage:nil target:self action:@selector(registBtnClick) title:@"马上注册" superview:_superView];
 	[_registBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.bottom.equalTo(_superView.mas_bottom).with.offset(-30);
 		make.centerX.mas_equalTo(_superView.mas_centerX);
@@ -168,7 +169,7 @@
 	}];
 	
 	//忘记密码按钮
-    _forgetBtn = [UIButton buttonWithFrame:CGRectZero font:14.0 titleColor:baseNavColor normalImage:nil disableImage:nil target:self action:@selector(forgetBtnAction) title:@"忘记密码" superview:_superView];
+    _forgetBtn = [UIButton buttonWithFrame:CGRectZero font:14.0 titleColor:UIColor.ys_blue normalImage:nil disableImage:nil target:self action:@selector(forgetBtnAction) title:@"忘记密码" superview:_superView];
 	_forgetBtn.hidden = YES;
 	[_forgetBtn mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(_loginBtn.mas_bottom).with.offset(15 * SCALE);
