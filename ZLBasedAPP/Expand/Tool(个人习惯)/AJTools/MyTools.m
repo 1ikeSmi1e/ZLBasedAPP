@@ -12,6 +12,17 @@
 
 singletonM(Tools)
 
+
+/**
+ 打开APP的系统设置页面
+ */
++ (void)openSystemSetting{
+    NSURL * url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
+    if([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+    }
+}
+
 + (void)tenderbtn:(UIButton *)tenderBtn updateWithBidStatus:(int)bid_status
 {
     NSString *btnTitle = nil;

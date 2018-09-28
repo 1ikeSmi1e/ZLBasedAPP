@@ -176,6 +176,18 @@
 		84534EEF215B9C87000C1869 /* LCActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 84534EED215B9C87000C1869 /* LCActionSheet.m */; };
 		84534EF2215B9D35000C1869 /* PreviewBigImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84534EF1215B9D34000C1869 /* PreviewBigImageViewController.m */; };
 		84534EF5215B9D9A000C1869 /* PreviewBigImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84534EF4215B9D9A000C1869 /* PreviewBigImageCell.m */; };
+		8454B570215DBF81002A6C8D /* MBProgressHUD+SGQRCode.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B56D215DBF80002A6C8D /* MBProgressHUD+SGQRCode.m */; };
+		8454B571215DBF81002A6C8D /* MBProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8454B56E215DBF80002A6C8D /* MBProgressHUD.bundle */; };
+		8454B57B215DC002002A6C8D /* SGQRCode.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8454B574215DC002002A6C8D /* SGQRCode.bundle */; };
+		8454B57C215DC002002A6C8D /* SGQRCodeObtainConfigure.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B575215DC002002A6C8D /* SGQRCodeObtainConfigure.m */; };
+		8454B57D215DC002002A6C8D /* SGQRCodeObtain.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B579215DC002002A6C8D /* SGQRCodeObtain.m */; };
+		8454B57E215DC002002A6C8D /* SGQRCodeScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B57A215DC002002A6C8D /* SGQRCodeScanView.m */; };
+		8454B582215DC061002A6C8D /* ZLQRcodeScanController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B581215DC061002A6C8D /* ZLQRcodeScanController.m */; };
+		8454B585215DCD43002A6C8D /* ZLQRResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B584215DCD43002A6C8D /* ZLQRResultController.m */; };
+		8454B587215DCF44002A6C8D /* ZLQRResultController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8454B586215DCF44002A6C8D /* ZLQRResultController.xib */; };
+		8454B58B215DD535002A6C8D /* ZLQRResultHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B589215DD535002A6C8D /* ZLQRResultHistoryCell.m */; };
+		8454B58C215DD535002A6C8D /* ZLQRResultHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8454B58A215DD535002A6C8D /* ZLQRResultHistoryCell.xib */; };
+		8454B590215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B58F215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m */; };
 		845BC6A12159DFEF00C9674C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC6A02159DFEF00C9674C /* AppDelegate.m */; };
 		845BC6A92159DFF100C9674C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845BC6A82159DFF100C9674C /* Assets.xcassets */; };
 		845BC6AF2159DFF100C9674C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC6AE2159DFF100C9674C /* main.m */; };
@@ -595,6 +607,27 @@
 		84534EF1215B9D34000C1869 /* PreviewBigImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewBigImageViewController.m; sourceTree = "<group>"; };
 		84534EF3215B9D9A000C1869 /* PreviewBigImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewBigImageCell.h; sourceTree = "<group>"; };
 		84534EF4215B9D9A000C1869 /* PreviewBigImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewBigImageCell.m; sourceTree = "<group>"; };
+		8454B56B215DBF80002A6C8D /* MBProgressHUD+SGQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MBProgressHUD+SGQRCode.h"; sourceTree = "<group>"; };
+		8454B56D215DBF80002A6C8D /* MBProgressHUD+SGQRCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MBProgressHUD+SGQRCode.m"; sourceTree = "<group>"; };
+		8454B56E215DBF80002A6C8D /* MBProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MBProgressHUD.bundle; sourceTree = "<group>"; };
+		8454B573215DC002002A6C8D /* SGQRCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCode.h; sourceTree = "<group>"; };
+		8454B574215DC002002A6C8D /* SGQRCode.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SGQRCode.bundle; sourceTree = "<group>"; };
+		8454B575215DC002002A6C8D /* SGQRCodeObtainConfigure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeObtainConfigure.m; sourceTree = "<group>"; };
+		8454B576215DC002002A6C8D /* SGQRCodeObtain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeObtain.h; sourceTree = "<group>"; };
+		8454B577215DC002002A6C8D /* SGQRCodeScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeScanView.h; sourceTree = "<group>"; };
+		8454B578215DC002002A6C8D /* SGQRCodeObtainConfigure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGQRCodeObtainConfigure.h; sourceTree = "<group>"; };
+		8454B579215DC002002A6C8D /* SGQRCodeObtain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeObtain.m; sourceTree = "<group>"; };
+		8454B57A215DC002002A6C8D /* SGQRCodeScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGQRCodeScanView.m; sourceTree = "<group>"; };
+		8454B580215DC061002A6C8D /* ZLQRcodeScanController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLQRcodeScanController.h; sourceTree = "<group>"; };
+		8454B581215DC061002A6C8D /* ZLQRcodeScanController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLQRcodeScanController.m; sourceTree = "<group>"; };
+		8454B583215DCD43002A6C8D /* ZLQRResultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLQRResultController.h; sourceTree = "<group>"; };
+		8454B584215DCD43002A6C8D /* ZLQRResultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLQRResultController.m; sourceTree = "<group>"; };
+		8454B586215DCF44002A6C8D /* ZLQRResultController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLQRResultController.xib; sourceTree = "<group>"; };
+		8454B588215DD535002A6C8D /* ZLQRResultHistoryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLQRResultHistoryCell.h; sourceTree = "<group>"; };
+		8454B589215DD535002A6C8D /* ZLQRResultHistoryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLQRResultHistoryCell.m; sourceTree = "<group>"; };
+		8454B58A215DD535002A6C8D /* ZLQRResultHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLQRResultHistoryCell.xib; sourceTree = "<group>"; };
+		8454B58E215DF34A002A6C8D /* ZLUserQRCodeHistoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLUserQRCodeHistoryController.h; sourceTree = "<group>"; };
+		8454B58F215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLUserQRCodeHistoryController.m; sourceTree = "<group>"; };
 		845BC69C2159DFEF00C9674C /* ZLBasedAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLBasedAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845BC69F2159DFEF00C9674C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		845BC6A02159DFEF00C9674C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1211,6 +1244,55 @@
 			path = LCActionSheet;
 			sourceTree = "<group>";
 		};
+		8454B569215DBF80002A6C8D /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				8454B56B215DBF80002A6C8D /* MBProgressHUD+SGQRCode.h */,
+				8454B56D215DBF80002A6C8D /* MBProgressHUD+SGQRCode.m */,
+				8454B56E215DBF80002A6C8D /* MBProgressHUD.bundle */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		8454B572215DC002002A6C8D /* SGQRCode */ = {
+			isa = PBXGroup;
+			children = (
+				8454B573215DC002002A6C8D /* SGQRCode.h */,
+				8454B574215DC002002A6C8D /* SGQRCode.bundle */,
+				8454B575215DC002002A6C8D /* SGQRCodeObtainConfigure.m */,
+				8454B576215DC002002A6C8D /* SGQRCodeObtain.h */,
+				8454B577215DC002002A6C8D /* SGQRCodeScanView.h */,
+				8454B578215DC002002A6C8D /* SGQRCodeObtainConfigure.h */,
+				8454B579215DC002002A6C8D /* SGQRCodeObtain.m */,
+				8454B57A215DC002002A6C8D /* SGQRCodeScanView.m */,
+			);
+			path = SGQRCode;
+			sourceTree = "<group>";
+		};
+		8454B57F215DC037002A6C8D /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				8454B580215DC061002A6C8D /* ZLQRcodeScanController.h */,
+				8454B581215DC061002A6C8D /* ZLQRcodeScanController.m */,
+				8454B583215DCD43002A6C8D /* ZLQRResultController.h */,
+				8454B584215DCD43002A6C8D /* ZLQRResultController.m */,
+				8454B586215DCF44002A6C8D /* ZLQRResultController.xib */,
+				8454B588215DD535002A6C8D /* ZLQRResultHistoryCell.h */,
+				8454B589215DD535002A6C8D /* ZLQRResultHistoryCell.m */,
+				8454B58A215DD535002A6C8D /* ZLQRResultHistoryCell.xib */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		8454B58D215DF31D002A6C8D /* QRCodeRecord */ = {
+			isa = PBXGroup;
+			children = (
+				8454B58E215DF34A002A6C8D /* ZLUserQRCodeHistoryController.h */,
+				8454B58F215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m */,
+			);
+			path = QRCodeRecord;
+			sourceTree = "<group>";
+		};
 		845BC6932159DFEF00C9674C = {
 			isa = PBXGroup;
 			children = (
@@ -1259,6 +1341,8 @@
 		845BC6B62159E30A00C9674C /* Vendors */ = {
 			isa = PBXGroup;
 			children = (
+				8454B572215DC002002A6C8D /* SGQRCode */,
+				8454B569215DBF80002A6C8D /* MBProgressHUD */,
 				841BA6DF215BA24C00B14ADC /* TZImagePickerController */,
 				84534E9C215B2FD4000C1869 /* JPush */,
 				845BC7DA2159E7A900C9674C /* BRPickerView */,
@@ -1292,6 +1376,7 @@
 		845BC6B82159E30A00C9674C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8454B57F215DC037002A6C8D /* QRCode */,
 				844133DD215A41DF00AF4D99 /* EditTypes */,
 				845BC6B92159E30A00C9674C /* Model */,
 				845BC6BA2159E30A00C9674C /* Controllers */,
@@ -1527,8 +1612,6 @@
 				8441345F215A472400AF4D99 /* FAccountCategaries.m */,
 				8441345D215A472400AF4D99 /* FAccountRecord.h */,
 				8441345B215A472300AF4D99 /* FAccountRecord.m */,
-				8441345C215A472400AF4D99 /* FAccountRecordSaveTool.h */,
-				8441345E215A472400AF4D99 /* FAccountRecordSaveTool.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1536,6 +1619,7 @@
 		845BC6D72159E30A00C9674C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8454B58D215DF31D002A6C8D /* QRCodeRecord */,
 				84534ED1215B6CF7000C1869 /* Settings */,
 				8441344E215A470B00AF4D99 /* FMineController.h */,
 				84413446215A470A00AF4D99 /* FMineController.m */,
@@ -1640,6 +1724,8 @@
 		845BC6DF2159E30A00C9674C /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				8441345C215A472400AF4D99 /* FAccountRecordSaveTool.h */,
+				8441345E215A472400AF4D99 /* FAccountRecordSaveTool.m */,
 				8409612F215A1C8500D0C7DA /* ReLogin.h */,
 				84096133215A1C8500D0C7DA /* ReLogin.m */,
 				84096136215A1C8500D0C7DA /* SecurityUtil.h */,
@@ -2255,6 +2341,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8454B58C215DD535002A6C8D /* ZLQRResultHistoryCell.xib in Resources */,
 				845BC8432159E7A900C9674C /* SVProgressHUD.bundle in Resources */,
 				844133D7215A41C100AF4D99 /* FRateViewController.xib in Resources */,
 				84413476215A472E00AF4D99 /* FMyExpandseRecordCell.xib in Resources */,
@@ -2264,7 +2351,10 @@
 				8441343B215A46EE00AF4D99 /* 计算器_叉@3x.png in Resources */,
 				8491D4D8215CF20D0045E2EA /* F_default_201810.txt in Resources */,
 				845BC82A2159E7A900C9674C /* MJRefresh.bundle in Resources */,
+				8454B57B215DC002002A6C8D /* SGQRCode.bundle in Resources */,
+				8454B587215DCF44002A6C8D /* ZLQRResultController.xib in Resources */,
 				844133C5215A418600AF4D99 /* WechatIMG608.jpeg in Resources */,
+				8454B571215DBF81002A6C8D /* MBProgressHUD.bundle in Resources */,
 				84413404215A421400AF4D99 /* FHomeNewsCell.xib in Resources */,
 				84413470215A472E00AF4D99 /* FMyIncomeRecordCell.xib in Resources */,
 				8491D4D5215CD1270045E2EA /* News_banner_1.png in Resources */,
@@ -2318,10 +2408,12 @@
 				8441349C215A499500AF4D99 /* UIButton+CountDown.m in Sources */,
 				845BC85D2159E7A900C9674C /* BRAddressModel.m in Sources */,
 				84413461215A472400AF4D99 /* FAccountRecord.m in Sources */,
+				8454B570215DBF81002A6C8D /* MBProgressHUD+SGQRCode.m in Sources */,
 				845BC8412159E7A900C9674C /* SVProgressHUD.m in Sources */,
 				844133FC215A421400AF4D99 /* FTakeRecordIncomeView.m in Sources */,
 				845BC8222159E7A900C9674C /* MASViewAttribute.m in Sources */,
 				845BC7F62159E7A900C9674C /* TAAnimatedDotView.m in Sources */,
+				8454B58B215DD535002A6C8D /* ZLQRResultHistoryCell.m in Sources */,
 				845BC84F2159E7A900C9674C /* SDWebImagePrefetcher.m in Sources */,
 				8409612B215A1A8100D0C7DA /* ZLNavBar.m in Sources */,
 				845BC85F2159E7A900C9674C /* BRAddressPickerView.m in Sources */,
@@ -2378,6 +2470,7 @@
 				845BC8342159E7A900C9674C /* MJRefreshNormalHeader.m in Sources */,
 				845BC80D2159E7A900C9674C /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				841BA704215BA24C00B14ADC /* UIView+Layout.m in Sources */,
+				8454B57E215DC002002A6C8D /* SGQRCodeScanView.m in Sources */,
 				844133E8215A41DF00AF4D99 /* FModifySubTypeController.m in Sources */,
 				84096125215A190D00D0C7DA /* ZLTabBarController.m in Sources */,
 				8444C20A215A53A200088A4B /* AFNetworkReachabilityManager.m in Sources */,
@@ -2396,6 +2489,7 @@
 				841BA709215BA24C00B14ADC /* TZPhotoPickerController.m in Sources */,
 				845BC7F92159E7A900C9674C /* NSObject+MJKeyValue.m in Sources */,
 				844133FF215A421400AF4D99 /* FTakeRecordExpandView.m in Sources */,
+				8454B582215DC061002A6C8D /* ZLQRcodeScanController.m in Sources */,
 				845BC8282159E7A900C9674C /* UIScrollView+MJRefresh.m in Sources */,
 				8441341D215A46AA00AF4D99 /* FCommonCounterViewController.m in Sources */,
 				8444C206215A53A200088A4B /* AFURLResponseSerialization.m in Sources */,
@@ -2408,6 +2502,7 @@
 				845BC8402159E7A900C9674C /* SVProgressAnimatedView.m in Sources */,
 				841BA705215BA24C00B14ADC /* TZPhotoPreviewController.m in Sources */,
 				8409618B215A1C8500D0C7DA /* NSDate+AJax.m in Sources */,
+				8454B590215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m in Sources */,
 				8441349A215A499500AF4D99 /* UIButton+KK.m in Sources */,
 				845BC81A2159E7A900C9674C /* ViewController+MASAdditions.m in Sources */,
 				845BC8162159E7A900C9674C /* IQUIViewController+Additions.m in Sources */,
@@ -2443,6 +2538,7 @@
 				84096177215A1C8500D0C7DA /* SecurityUtil.m in Sources */,
 				84096126215A190D00D0C7DA /* ZLUserModel.m in Sources */,
 				84413455215A470C00AF4D99 /* FMonthExpandseRecordController.m in Sources */,
+				8454B585215DCD43002A6C8D /* ZLQRResultController.m in Sources */,
 				84534EE5215B9051000C1869 /* ZLSettingFeedBackController.m in Sources */,
 				845BC8502159E7A900C9674C /* SDImageCache.m in Sources */,
 				8441349D215A499500AF4D99 /* FUsersTool.m in Sources */,
@@ -2491,6 +2587,7 @@
 				844133DC215A41C100AF4D99 /* FTakeRecordExpandController.m in Sources */,
 				84413463215A472400AF4D99 /* FAccountCategaries.m in Sources */,
 				84096194215A1C8500D0C7DA /* AJTextFieldBaseController.m in Sources */,
+				8454B57C215DC002002A6C8D /* SGQRCodeObtainConfigure.m in Sources */,
 				845BC8142159E7A900C9674C /* IQUIScrollView+Additions.m in Sources */,
 				845BC8092159E7A900C9674C /* IQTextView.m in Sources */,
 				84534EF5215B9D9A000C1869 /* PreviewBigImageCell.m in Sources */,
@@ -2506,6 +2603,7 @@
 				844133C8215A419700AF4D99 /* FHomeNews.m in Sources */,
 				841BA701215BA24C00B14ADC /* TZVideoPlayerController.m in Sources */,
 				84413400215A421400AF4D99 /* FHomeNewsCell.m in Sources */,
+				8454B57D215DC002002A6C8D /* SGQRCodeObtain.m in Sources */,
 				8441349E215A499500AF4D99 /* FLoginViewController.m in Sources */,
 				84413498215A499500AF4D99 /* CaptchaView.m in Sources */,
 				845BC8362159E7A900C9674C /* MJRefreshGifHeader.m in Sources */,

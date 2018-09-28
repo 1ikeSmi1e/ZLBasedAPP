@@ -19,6 +19,7 @@
 #import "KYWaterWaveView.h"
 #import "ProductItem.h"
 #import "ZLSettingsController.h"
+#import "ZLUserQRCodeHistoryController.h"
 
 @interface FMineController ()
 @property (nonatomic, weak) KYWaterWaveView *ratioView;
@@ -47,7 +48,8 @@ static NSString * const reuseIdentifier = @"FMineCell";
     
     ProductItem *itme1 = [ProductItem itemWithTitle:@"收入记录" icon:@"Mine_incomRecord"];
     ProductItem *itme2 = [ProductItem itemWithTitle:@"支出记录" icon:@"Mine_expandseRecord"];
-    self.dataArray = @[itme1, itme2].mutableCopy;
+    ProductItem *itme3 = [ProductItem itemWithTitle:@"二维码识别记录" icon:@"Mine_QRScanRecord"];
+    self.dataArray = @[itme1, itme2, itme3].mutableCopy;
     
     [self updateTodayRecordView];
 }
@@ -397,8 +399,13 @@ static NSString * const reuseIdentifier = @"FMineCell";
         FMyIncomeRecordController *controller = [FMyIncomeRecordController new];
         controller.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:controller animated:YES];
-    }else{
+    }else if(indexPath.row == 1){
         FMyExpandseRecordController *controller = [FMyExpandseRecordController new];
+        controller.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:controller animated:YES];
+        
+    }else{
+        ZLUserQRCodeHistoryController *controller = [ZLUserQRCodeHistoryController new];
         controller.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:controller animated:YES];
         

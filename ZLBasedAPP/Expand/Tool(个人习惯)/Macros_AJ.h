@@ -41,6 +41,7 @@
 #define isIOS10later [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){10,0,0}]
 #define isIOS11later [[NSProcessInfo processInfo] isOperatingSystemAtLeastVersion:(NSOperatingSystemVersion){11,0,0}]
 
+// 代码段
 #define ViewRadius(View, Radius)\
 \
 [View.layer setCornerRadius:(Radius)];\
@@ -52,4 +53,5 @@
 [View.layer setMasksToBounds:YES];\
 [View.layer setBorderWidth:(Width)];\
 [View.layer setBorderColor:[Color CGColor]]
+
 #endif /* Macros_h */

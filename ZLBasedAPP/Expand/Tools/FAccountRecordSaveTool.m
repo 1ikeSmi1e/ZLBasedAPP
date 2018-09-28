@@ -199,4 +199,132 @@ static NSMutableArray *expiredDateExpandseArr;
         return NO;
     }
 }
+
+
+
+/// 二维码识别记录
++ (BOOL)saveANewQRCodeRecord:(NSDictionary *)qrInfoDic{
+    
+    if (qrInfoDic[JLBQRCodeStringKey] == nil || qrInfoDic[JLBQRCodeTimeKey] == nil) {
+        return NO;
+    }
+    
+    // 存进plist文件
+    NSString *fileName = nil;
+    if(AppDelegateInstance.userInfo.phone.length > 0){
+        
+        fileName = [NSString stringWithFormat:@"JLB%@_QRCodeRecords.plist", AppDelegateInstance.userInfo.phone];
+    }else{
+        
+        fileName = @"common.plist";
+    }
+    
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *filePathName = [path stringByAppendingPathComponent:fileName];
+    
+    NSMutableArray *arrLast = [NSArray arrayWithContentsOfFile:filePathName].mutableCopy;
+//    for (NSDictionary *recordInfo in arrLast) {
+//        if ([qrInfoDic[JLBQRCodeStringKey] isEqualToString:recordInfo[JLBQRCodeStringKey]]) {
+//
+//            [arrLast removeObject:recordInfo];
+//
+//        }
+//    }
+    if (!arrLast) {
+        arrLast = [NSMutableArray array];
+    }
+    [arrLast insertObject:qrInfoDic atIndex:0];
+    // 写入plist
+    if ([arrLast writeToFile:filePathName atomically:YES]) {
+        
+        return YES;
+        DLOG(@"写入成功");
+    }else{
+        
+        DLOG(@"写入失败");
+        return NO;
+    }
+}
+
++ (NSMutableArray *)QRCodeRecords{
+    
+    // 存进plist文件
+    NSString *fileName = nil;
+    if(AppDelegateInstance.userInfo.phone.length > 0){
+        
+        fileName = [NSString stringWithFormat:@"JLB%@_QRCodeRecords.plist", AppDelegateInstance.userInfo.phone];
+    }else{
+        
+        fileName = @"common.plist";
+    }
+    
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *filePathName = [path stringByAppendingPathComponent:fileName];
+    
+    NSMutableArray *arrLast = [NSArray arrayWithContentsOfFile:filePathName].mutableCopy;
+    
+    return arrLast;
+}
+
++ (NSMutableArray *)QRCodeRecordsFromDefault{
+    
+    NSMutableArray *arr = self.QRCodeRecords;
+    if (arr.count > 0) {
+        return arr;
+    }
+    // 如果是已经保存过了不执行保存
+    NSDictionary *record1 = @{JLBQRCodeStringKey : @"https://qq.com", JLBQRCodeTimeKey : @"2018-09-28 13:18:09"};
+    NSDictionary *record2 = @{JLBQRCodeStringKey : @"https://blog.csdn.net/cc1991_/article/details/73900093", JLBQRCodeTimeKey : @"2018-09-27 15:18:09"};
+    NSDictionary *record3 = @{JLBQRCodeStringKey : @"https://baidu.com", JLBQRCodeTimeKey : @"2018-09-26 19:18:09"};
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+       
+        [FAccountRecordSaveTool saveANewQRCodeRecord:record3];
+        
+        [FAccountRecordSaveTool saveANewQRCodeRecord:record2];
+        
+        [FAccountRecordSaveTool saveANewQRCodeRecord:record1];
+    });
+    return  @[record1,record2,record3].mutableCopy;
+  
+}
+
++ (BOOL)clearQRCodeRecords{
+    
+    // 存进plist文件
+    NSString *fileName = nil;
+    if(AppDelegateInstance.userInfo.phone.length > 0){
+        
+        fileName = [NSString stringWithFormat:@"JLB%@_QRCodeRecords.plist", AppDelegateInstance.userInfo.phone];
+    }else{
+        
+        fileName = @"common.plist";
+    }
+    
+    NSString *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    NSString *filePathName = [path stringByAppendingPathComponent:fileName];
+    
+    NSMutableArray *arrLast = [NSArray arrayWithContentsOfFile:filePathName].mutableCopy;
+    //    for (NSDictionary *recordInfo in arrLast) {
+    //        if ([qrInfoDic[JLBQRCodeStringKey] isEqualToString:recordInfo[JLBQRCodeStringKey]]) {
+    //
+    //            [arrLast removeObject:recordInfo];
+    //
+    //        }
+    //    }
+    if (!arrLast) {
+        arrLast = [NSMutableArray array];
+    }
+    [arrLast removeAllObjects];
+    // 写入plist
+    if ([arrLast writeToFile:filePathName atomically:YES]) {
+        
+        return YES;
+        DLOG(@"写入成功");
+    }else{
+        
+        DLOG(@"写入失败");
+        return NO;
+    }
+}
 @end

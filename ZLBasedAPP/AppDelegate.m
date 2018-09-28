@@ -57,7 +57,7 @@ static BOOL isProduction = NO;
     //设置我们的
     [self setupMyView];
     
-    [self generateMonthBlance];
+//    [self generateMonthBlance];
     return YES;
 }
 

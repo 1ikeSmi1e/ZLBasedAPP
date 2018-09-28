@@ -19,4 +19,18 @@
 
 + (BOOL)saveAccountCategaries;
 + (FAccountCategaries *)readLocalUserAccountCategaries;
+
+
++ (BOOL)saveANewQRCodeRecord:(NSDictionary *)qrInfoDic;
++ (NSMutableArray *)QRCodeRecords;
++ (NSMutableArray *)QRCodeRecordsFromDefault;
++ (BOOL)clearQRCodeRecords;
 @end
+
+
+
+
+/// 二维码识别记录
+static NSString * const JLBQRCodeStringKey = @"JLBQRCodeStringKey";
+static NSString * const JLBQRCodeTimeKey = @"JLBQRCodeTimeKey";
+

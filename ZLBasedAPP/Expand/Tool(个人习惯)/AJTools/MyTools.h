@@ -11,6 +11,10 @@
 
 @interface MyTools : NSObject <NSCopying, NSMutableCopying>
 
+/**
+ 打开APP的系统设置页面
+ */
++ (void)openSystemSetting;
 + (void)tenderbtn:(UIButton *)tenderBtn updateWithBidStatus:(int)bid_status;
 + (void)gotoFinanceVCFromController:(UIViewController *)currentVC;
 /**

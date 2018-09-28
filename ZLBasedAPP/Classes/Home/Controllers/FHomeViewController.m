@@ -18,10 +18,13 @@
 #import "FWebController.h"
 #import "ProductItem.h"
 #import "AFNetworking.h"
+#import "ZLQRcodeScanController.h"
+#import <AVFoundation/AVFoundation.h>
 
 #define baseUrl @"https://wechat.meipenggang.com"
 @interface FHomeViewController ()
 
+@property (nonatomic, strong) NSMutableArray *toolArr;
 @property (nonatomic, weak) HomeHeader *header;
 @end
 static NSString * const reuseIdentifier = @"FHomeCell";
@@ -35,7 +38,9 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     
     ProductItem *itme1 = [ProductItem itemWithTitle:@"利率看板" icon:@"Home_interest"];
     ProductItem *itme2 = [ProductItem itemWithTitle:@"记一笔" icon:@"Home_takeRecord"];
+    ProductItem *itme3 = [ProductItem itemWithTitle:@"二维码扫描" icon:@"Home_QRScan"];
     
+    [self.toolArr addObject:itme3];
     self.dataArray = @[itme1, itme2].mutableCopy;
     self.header.imageURLStringsGroup = @[
 //                                         @"https://static.weijinzaixian.com/ad_0603403dc18654ec40c34a63c5eb5dd8.jpg",
@@ -57,15 +62,13 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 - (void)viewDidAppear:(BOOL)animated{
     
     [super viewDidAppear:animated];
-    
-    
 }
 
 - (void)initView
 {
     self.automaticallyAdjustsScrollViewInsets = NO;
     
-    UITableView *tableView = [UITableView tableViewWithFrmae:RECT(0, 0, MSWIDTH, MSHIGHT-self.tabBarController.tabBar.height) backgroundColor:AJGrayBackgroundColor delegate:self tableViewStyle:UITableViewStylePlain separatorStyle:UITableViewCellSeparatorStyleSingleLineEtched superview:self.view];
+    UITableView *tableView = [UITableView tableViewWithFrmae:RECT(0, 0, MSWIDTH, MSHIGHT-self.tabBarController.tabBar.height) backgroundColor:AJGrayBackgroundColor delegate:self tableViewStyle:UITableViewStyleGrouped separatorStyle:UITableViewCellSeparatorStyleSingleLineEtched superview:self.view];
     self.tableView = tableView;
     tableView.tableFooterView = [UIView new];
     tableView.estimatedRowHeight = tableView.rowHeight = 50.f;
@@ -123,8 +126,10 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     
 }
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row >=2) {
+    if (indexPath.section == 0 && indexPath.row >= 2) {
         return 90;
     }
     return 55.f;
@@ -132,43 +137,121 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row >=2) {
+    if (indexPath.section == 0 && indexPath.row >= 2) {
         return 90;
     }
     return 55.f;
 }
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+
+- (CGFloat )tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        return 40.f;
+    }
+    return 0.2f;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (section == 1) {
+        return @"工具箱";
+    }
+    return nil;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+//    if (section == 1) {
+//
+//    }
+    return nil;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+    if (section == 1) {
+        return self.toolArr.count;
+    }
     return self.dataArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row >=2) {
+    if (indexPath.section == 0){
+        if (indexPath.row >=2) {
+            
+            FHomeNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier2 forIndexPath:indexPath];
+            
+            FHomeNews *bean = self.dataArray[indexPath.row];
+            cell.titleL.text = bean.title;
+            [cell.imgV sd_setImageWithURL:[NSURL URLWithString:[baseUrl stringByAppendingString:bean.image_filename]]];
+            cell.detailL.text = bean.time;
+            return cell;
+        }else {
+            
+            
+            FHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+            ProductItem *itme1 = self.dataArray[indexPath.row];
+            
+            cell.titleL.text = itme1.title;
+            cell.imgV.image = [UIImage imageNamed:itme1.icon];
+            return cell;
+        }
         
-        FHomeNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier2 forIndexPath:indexPath];
-        
-        FHomeNews *bean = self.dataArray[indexPath.row];
-        cell.titleL.text = bean.title;
-        [cell.imgV sd_setImageWithURL:[NSURL URLWithString:[baseUrl stringByAppendingString:bean.image_filename]]];
-        cell.detailL.text = bean.time;
-        return cell;
     }else{
         
         
+        
         FHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
-        ProductItem *itme1 = self.dataArray[indexPath.row];
+        ProductItem *itme1 = self.toolArr[indexPath.row];
         
         cell.titleL.text = itme1.title;
         cell.imgV.image = [UIImage imageNamed:itme1.icon];
         return cell;
     }
+   
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    if (indexPath.row == 1) {
+    if (indexPath.section == 0) {
+        if (indexPath.row == 1) {
+            
+            if (!AppDelegateInstance.userInfo) {
+                //如果未登录，则跳转登录界面
+                FLoginViewController *loginView = [[FLoginViewController alloc] init];
+                UINavigationController *loginNVC = [[UINavigationController alloc] initWithRootViewController:loginView];
+                //        loginView.backType = MyWealth;
+                [((UINavigationController *)self.tabBarController.selectedViewController) presentViewController:loginNVC animated:YES completion:nil];
+                return;
+            }
+            
+            
+            FTakeRecordFatherController *controller = [[FTakeRecordFatherController alloc] init];
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        } else if (indexPath.row == 0) {
+            
+            UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Counters" bundle:nil];
+            UIViewController *tenderVC = [homeStoryboard instantiateViewControllerWithIdentifier:@"rateController"];
+            tenderVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:tenderVC animated:YES];
+        }else{
+            
+            FHomeNews *bean = self.dataArray[indexPath.row];
+            FWebController *controller = [FWebController new];
+            controller.urlStr = [NSString stringWithFormat:@"%@/AccountController/wealthinfoNewsDeatil?id=%@", baseUrl, bean.ID];
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+    }else{
         
         if (!AppDelegateInstance.userInfo) {
             //如果未登录，则跳转登录界面
@@ -178,24 +261,80 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
             [((UINavigationController *)self.tabBarController.selectedViewController) presentViewController:loginNVC animated:YES completion:nil];
             return;
         }
-       
-        
-        FTakeRecordFatherController *controller = [[FTakeRecordFatherController alloc] init];
+        ZLQRcodeScanController *controller = [ZLQRcodeScanController new];
         controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
-    } else if (indexPath.row == 0) {
-
-        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Counters" bundle:nil];
-        UIViewController *tenderVC = [homeStoryboard instantiateViewControllerWithIdentifier:@"rateController"];
-        tenderVC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:tenderVC animated:YES];
-    }else{
-        
-        FHomeNews *bean = self.dataArray[indexPath.row];
-        FWebController *controller = [FWebController new];
-        controller.urlStr = [NSString stringWithFormat:@"%@/AccountController/wealthinfoNewsDeatil?id=%@", baseUrl, bean.ID];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:controller animated:YES];
+        [self QRCodeScanVC:controller];
     }
+    
+}
+
+
+
+- (void)QRCodeScanVC:(UIViewController *)scanVC {
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (device) {
+        AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+        switch (status) {
+            case AVAuthorizationStatusNotDetermined: {
+                [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+                    if (granted) {
+                        dispatch_sync(dispatch_get_main_queue(), ^{
+                            [self.navigationController pushViewController:scanVC animated:YES];
+                        });
+                        NSLog(@"用户第一次同意了访问相机权限 - - %@", [NSThread currentThread]);
+                    } else {
+                        NSLog(@"用户第一次拒绝了访问相机权限 - - %@", [NSThread currentThread]);
+                    }
+                }];
+                break;
+            }
+            case AVAuthorizationStatusAuthorized: {
+                [self.navigationController pushViewController:scanVC animated:YES];
+                break;
+            }
+            case AVAuthorizationStatusDenied: {
+                NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+                NSString *app_Name = [infoDict objectForKey:@"CFBundleDisplayName"];
+                if (app_Name == nil) {
+                    app_Name = [infoDict objectForKey:@"CFBundleName"];
+                }
+                NSString *message = [NSString stringWithFormat:@"请去-> [设置 - 隐私 - 相机 - %@] 打开访问开关", app_Name];
+                UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:message preferredStyle:(UIAlertControllerStyleAlert)];
+                UIAlertAction *alertA = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+                    [MyTools openSystemSetting];
+                }];
+                
+                [alertC addAction:alertA];
+                [self presentViewController:alertC animated:YES completion:nil];
+                break;
+            }
+            case AVAuthorizationStatusRestricted: {
+                NSLog(@"因为系统原因, 无法访问相册");
+                break;
+            }
+                
+            default:
+                break;
+        }
+        return;
+    }
+    
+    UIAlertController *alertC = [UIAlertController alertControllerWithTitle:@"温馨提示" message:@"未检测到您的摄像头" preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction *alertA = [UIAlertAction actionWithTitle:@"确定" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alertC addAction:alertA];
+    [self presentViewController:alertC animated:YES completion:nil];
+}
+
+
+- (NSMutableArray *)toolArr
+{
+    if (!_toolArr) {
+        self.toolArr = [NSMutableArray array];
+        
+    }
+    return _toolArr;
 }
 @end

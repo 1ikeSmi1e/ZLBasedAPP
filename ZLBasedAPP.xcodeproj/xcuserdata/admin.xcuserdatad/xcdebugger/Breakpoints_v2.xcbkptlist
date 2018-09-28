@@ -6,22 +6,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZLBasedAPP/AppDelegate.m"
-            timestampString = "559739297.441172"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
-            landmarkName = "-generateMonthBlance"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -154,12 +138,12 @@
                   moduleName = "ZLBasedAPP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Swift%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/ZLBasedAPP/ZLBasedAPP/Classes/Mine/Controllers/FMyIncomeRecordController.m"
-                  timestampString = "559739297.593122"
+                  timestampString = "559807994.193241"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
                   endingLineNumber = "32"
-                  offsetFromSymbolStart = "280">
+                  offsetFromSymbolStart = "332">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -169,12 +153,12 @@
                   moduleName = "ZLBasedAPP"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/admin/Desktop/Swift%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/ZLBasedAPP/ZLBasedAPP/Classes/Mine/Controllers/FMyIncomeRecordController.m"
-                  timestampString = "559739297.595381"
+                  timestampString = "559807994.19495"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "34"
                   endingLineNumber = "34"
-                  offsetFromSymbolStart = "75">
+                  offsetFromSymbolStart = "88">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -240,7 +224,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ZLBasedAPP/Classes/News/Controllers/ZLTouTiaoNewsController.m"
@@ -250,22 +234,6 @@
             startingLineNumber = "75"
             endingLineNumber = "75"
             landmarkName = "-requestData"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ZLBasedAPP/Classes/Home/Views/HomeHeader.m"
-            timestampString = "559731723.802164"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "-cycleScrollView:didSelectItemAtIndex:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
