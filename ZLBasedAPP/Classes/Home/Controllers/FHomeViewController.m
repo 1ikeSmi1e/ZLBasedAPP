@@ -20,6 +20,8 @@
 #import "AFNetworking.h"
 #import "ZLQRcodeScanController.h"
 #import <AVFoundation/AVFoundation.h>
+#import "ZTAppCalculatorViewController.h"
+#import "ZLQRCodeGeneratorController.h"
 
 #define baseUrl @"https://wechat.meipenggang.com"
 @interface FHomeViewController ()
@@ -39,13 +41,16 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     ProductItem *itme1 = [ProductItem itemWithTitle:@"利率看板" icon:@"Home_interest"];
     ProductItem *itme2 = [ProductItem itemWithTitle:@"记一笔" icon:@"Home_takeRecord"];
     ProductItem *itme3 = [ProductItem itemWithTitle:@"二维码扫描" icon:@"Home_QRScan"];
-    
+    ProductItem *itme4 = [ProductItem itemWithTitle:@"便利计算器" icon:@"Home_caculator"];
+    ProductItem *itme5 = [ProductItem itemWithTitle:@"二维码生成器" icon:@"Home_QRCodeGenerator"];
     [self.toolArr addObject:itme3];
+    [self.toolArr addObject:itme4];
+    [self.toolArr addObject:itme5];
     self.dataArray = @[itme1, itme2].mutableCopy;
     self.header.imageURLStringsGroup = @[
 //                                         @"https://static.weijinzaixian.com/ad_0603403dc18654ec40c34a63c5eb5dd8.jpg",
-                                         @"https://static.weijinzaixian.com/ad_15bf2acdc7a3119e37d3fae7bcdbd10f.jpg",
-                                         @"WechatIMG608.jpeg"
+                                         @"Home_banner1",
+                                         @"Home_banner2"
 //                                         @"https://static.weijinzaixian.com/ad_261360cfeb807ef46adbf76b69f5c8a2.jpg"
                                          ];
     
@@ -153,7 +158,7 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if (section == 1) {
-        return 40.f;
+        return 50.f;
     }
     return 0.2f;
 }
@@ -253,17 +258,32 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
         }
     }else{
         
-        if (!AppDelegateInstance.userInfo) {
-            //如果未登录，则跳转登录界面
-            FLoginViewController *loginView = [[FLoginViewController alloc] init];
-            UINavigationController *loginNVC = [[UINavigationController alloc] initWithRootViewController:loginView];
-            //        loginView.backType = MyWealth;
-            [((UINavigationController *)self.tabBarController.selectedViewController) presentViewController:loginNVC animated:YES completion:nil];
-            return;
+        if (indexPath.row == 0) {
+            if (!AppDelegateInstance.userInfo) {
+                //如果未登录，则跳转登录界面
+                FLoginViewController *loginView = [[FLoginViewController alloc] init];
+                UINavigationController *loginNVC = [[UINavigationController alloc] initWithRootViewController:loginView];
+                //        loginView.backType = MyWealth;
+                [((UINavigationController *)self.tabBarController.selectedViewController) presentViewController:loginNVC animated:YES completion:nil];
+                return;
+            }
+            ZLQRcodeScanController *controller = [ZLQRcodeScanController new];
+            controller.hidesBottomBarWhenPushed = YES;
+            [self QRCodeScanVC:controller];
+        }else if (indexPath.row == 1){
+            
+            ZTAppCalculatorViewController *controller =  [[ZTAppCalculatorViewController alloc] init];
+            controller.isNew = YES;
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if (indexPath.row == 2){
+            
+            ZLQRCodeGeneratorController *controller =  [[ZLQRCodeGeneratorController alloc] init];
+        
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
         }
-        ZLQRcodeScanController *controller = [ZLQRcodeScanController new];
-        controller.hidesBottomBarWhenPushed = YES;
-        [self QRCodeScanVC:controller];
+        
     }
     
 }

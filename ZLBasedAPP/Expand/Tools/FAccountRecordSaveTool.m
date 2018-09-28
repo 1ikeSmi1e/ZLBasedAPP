@@ -273,7 +273,7 @@ static NSMutableArray *expiredDateExpandseArr;
         return arr;
     }
     // 如果是已经保存过了不执行保存
-    NSDictionary *record1 = @{JLBQRCodeStringKey : @"https://qq.com", JLBQRCodeTimeKey : @"2018-09-28 13:18:09"};
+    NSDictionary *record1 = @{JLBQRCodeStringKey : @"https://baijiahao.baidu.com/s?id=1611956688989933970&wfr=spider&for=pc", JLBQRCodeTimeKey : @"2018-09-28 13:18:09"};
     NSDictionary *record2 = @{JLBQRCodeStringKey : @"https://blog.csdn.net/cc1991_/article/details/73900093", JLBQRCodeTimeKey : @"2018-09-27 15:18:09"};
     NSDictionary *record3 = @{JLBQRCodeStringKey : @"https://baidu.com", JLBQRCodeTimeKey : @"2018-09-26 19:18:09"};
     

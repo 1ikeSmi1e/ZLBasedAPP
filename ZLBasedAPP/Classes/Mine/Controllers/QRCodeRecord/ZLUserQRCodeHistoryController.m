@@ -74,7 +74,7 @@ static NSString * const reuseIdentifier = @"ZLQRResultHistoryCell";
 
 - (void)initView {
     
-    ZLNavBar *bar = [[ZLNavBar alloc] initWithTitle:@"二维码识别结果" leftName:nil rightName:@"清空记录" delegate:self];
+    ZLNavBar *bar = [[ZLNavBar alloc] initWithTitle:@"二维码识别记录" leftName:nil rightName:@"清空记录" delegate:self];
     
     
     UITableView *tableView = [UITableView tableViewWithFrmae:RECT(0, bar.maxY, MSWIDTH, MSHIGHT - bar.maxY) backgroundColor:AJGrayBackgroundColor delegate:self tableViewStyle:UITableViewStylePlain separatorStyle:UITableViewCellSeparatorStyleNone superview:self.view];
@@ -113,7 +113,7 @@ static NSString * const reuseIdentifier = @"ZLQRResultHistoryCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self openUrlInSafari:self.dataArray[indexPath.row]];
+    [self openUrlInSafari:self.dataArray[indexPath.row][JLBQRCodeStringKey]];
 }
 
 - (void)openUrlInSafari:(NSString *)sender

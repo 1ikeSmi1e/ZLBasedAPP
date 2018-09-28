@@ -27,7 +27,7 @@
     self.image = [self createNonInterpolatedUIImageFormCIImage:outputImage withSize:200];
     if (self.subviews.count) return;
     UIImageView *imgV = [[UIImageView alloc] init];
-    imgV.image = [UIImage imageNamed:@"logo"];
+//    imgV.image = [UIImage imageNamed:@"logo112"];
     CGFloat imgvW = self.width * 78/295.f;
     imgV.layer.cornerRadius = 12.f;
     imgV.layer.masksToBounds = YES;

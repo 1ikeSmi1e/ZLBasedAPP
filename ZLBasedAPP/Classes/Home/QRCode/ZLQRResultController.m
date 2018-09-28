@@ -101,7 +101,7 @@ static NSString * const reuseIdentifier = @"ZLQRResultHistoryCell";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [self openUrlInSafari:self.dataArray[indexPath.row]];
+    [self openUrlInSafari:self.dataArray[indexPath.row][JLBQRCodeStringKey]];
 }
 
 - (void)openUrlInSafari:(NSString *)sender

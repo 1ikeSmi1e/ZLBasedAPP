@@ -188,6 +188,9 @@
 		8454B58B215DD535002A6C8D /* ZLQRResultHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B589215DD535002A6C8D /* ZLQRResultHistoryCell.m */; };
 		8454B58C215DD535002A6C8D /* ZLQRResultHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8454B58A215DD535002A6C8D /* ZLQRResultHistoryCell.xib */; };
 		8454B590215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B58F215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m */; };
+		8454B594215E064B002A6C8D /* ZLQRCodeGeneratorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8454B593215E064B002A6C8D /* ZLQRCodeGeneratorController.m */; };
+		8454B597215E0DE8002A6C8D /* Home_banner2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8454B595215E0DE8002A6C8D /* Home_banner2.png */; };
+		8454B598215E0DE8002A6C8D /* Home_banner1.png in Resources */ = {isa = PBXBuildFile; fileRef = 8454B596215E0DE8002A6C8D /* Home_banner1.png */; };
 		845BC6A12159DFEF00C9674C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC6A02159DFEF00C9674C /* AppDelegate.m */; };
 		845BC6A92159DFF100C9674C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845BC6A82159DFF100C9674C /* Assets.xcassets */; };
 		845BC6AF2159DFF100C9674C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC6AE2159DFF100C9674C /* main.m */; };
@@ -628,6 +631,10 @@
 		8454B58A215DD535002A6C8D /* ZLQRResultHistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLQRResultHistoryCell.xib; sourceTree = "<group>"; };
 		8454B58E215DF34A002A6C8D /* ZLUserQRCodeHistoryController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLUserQRCodeHistoryController.h; sourceTree = "<group>"; };
 		8454B58F215DF34A002A6C8D /* ZLUserQRCodeHistoryController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLUserQRCodeHistoryController.m; sourceTree = "<group>"; };
+		8454B592215E064B002A6C8D /* ZLQRCodeGeneratorController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLQRCodeGeneratorController.h; sourceTree = "<group>"; };
+		8454B593215E064B002A6C8D /* ZLQRCodeGeneratorController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLQRCodeGeneratorController.m; sourceTree = "<group>"; };
+		8454B595215E0DE8002A6C8D /* Home_banner2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home_banner2.png; sourceTree = "<group>"; };
+		8454B596215E0DE8002A6C8D /* Home_banner1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Home_banner1.png; sourceTree = "<group>"; };
 		845BC69C2159DFEF00C9674C /* ZLBasedAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLBasedAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		845BC69F2159DFEF00C9674C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		845BC6A02159DFEF00C9674C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -1293,6 +1300,15 @@
 			path = QRCodeRecord;
 			sourceTree = "<group>";
 		};
+		8454B591215E0632002A6C8D /* QRCodeGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				8454B592215E064B002A6C8D /* ZLQRCodeGeneratorController.h */,
+				8454B593215E064B002A6C8D /* ZLQRCodeGeneratorController.m */,
+			);
+			path = QRCodeGenerator;
+			sourceTree = "<group>";
+		};
 		845BC6932159DFEF00C9674C = {
 			isa = PBXGroup;
 			children = (
@@ -1376,6 +1392,7 @@
 		845BC6B82159E30A00C9674C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				8454B591215E0632002A6C8D /* QRCodeGenerator */,
 				8454B57F215DC037002A6C8D /* QRCode */,
 				844133DD215A41DF00AF4D99 /* EditTypes */,
 				845BC6B92159E30A00C9674C /* Model */,
@@ -1746,6 +1763,9 @@
 		845BC6E42159E30A00C9674C /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				845BC6A82159DFF100C9674C /* Assets.xcassets */,
+				8454B596215E0DE8002A6C8D /* Home_banner1.png */,
+				8454B595215E0DE8002A6C8D /* Home_banner2.png */,
 				8491D4D1215CD1270045E2EA /* News_banner_1.png */,
 				8491D4CF215CD1260045E2EA /* News_banner_2.png */,
 				8491D4D0215CD1260045E2EA /* News_banner_3.png */,
@@ -1757,7 +1777,6 @@
 				8441347B215A475600AF4D99 /* F_default_201808.txt */,
 				84534E99215B25DE000C1869 /* F_default_201809.txt */,
 				8491D4D7215CF20D0045E2EA /* F_default_201810.txt */,
-				845BC6A82159DFF100C9674C /* Assets.xcassets */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -2344,6 +2363,7 @@
 				8454B58C215DD535002A6C8D /* ZLQRResultHistoryCell.xib in Resources */,
 				845BC8432159E7A900C9674C /* SVProgressHUD.bundle in Resources */,
 				844133D7215A41C100AF4D99 /* FRateViewController.xib in Resources */,
+				8454B597215E0DE8002A6C8D /* Home_banner2.png in Resources */,
 				84413476215A472E00AF4D99 /* FMyExpandseRecordCell.xib in Resources */,
 				8491D4D6215CD1270045E2EA /* News_banner_4.png in Resources */,
 				845BC6A92159DFF100C9674C /* Assets.xcassets in Resources */,
@@ -2376,6 +2396,7 @@
 				8441347D215A475600AF4D99 /* F_default_201805.txt in Resources */,
 				8441347E215A475600AF4D99 /* F_default_201806.txt in Resources */,
 				8441341C215A46AA00AF4D99 /* FCounterViewController.xib in Resources */,
+				8454B598215E0DE8002A6C8D /* Home_banner1.png in Resources */,
 				8491D4D3215CD1270045E2EA /* News_banner_2.png in Resources */,
 				844133FD215A421400AF4D99 /* FHomeCell.xib in Resources */,
 				844133FE215A421400AF4D99 /* FEditFirstTypeCell.xib in Resources */,
@@ -2497,6 +2518,7 @@
 				845BC8592159E7A900C9674C /* BRStringPickerView.m in Sources */,
 				84096123215A190D00D0C7DA /* ZLNavigationController.m in Sources */,
 				84413420215A46AA00AF4D99 /* FFinanceCounterViewController.m in Sources */,
+				8454B594215E064B002A6C8D /* ZLQRCodeGeneratorController.m in Sources */,
 				845BC8152159E7A900C9674C /* IQUIView+Hierarchy.m in Sources */,
 				84413457215A470C00AF4D99 /* FMyExpandseRecordController.m in Sources */,
 				845BC8402159E7A900C9674C /* SVProgressAnimatedView.m in Sources */,
