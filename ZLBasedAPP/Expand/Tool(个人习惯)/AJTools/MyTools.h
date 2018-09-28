@@ -15,6 +15,7 @@
  打开APP的系统设置页面
  */
 + (void)openSystemSetting;
++ (NSString *)appName;
 + (void)tenderbtn:(UIButton *)tenderBtn updateWithBidStatus:(int)bid_status;
 + (void)gotoFinanceVCFromController:(UIViewController *)currentVC;
 /**

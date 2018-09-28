@@ -23,6 +23,15 @@ singletonM(Tools)
     }
 }
 
++ (NSString *)appName{
+    NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
+    NSString *app_Name = [infoDict objectForKey:@"CFBundleDisplayName"];
+    if (app_Name == nil) {
+        app_Name = [infoDict objectForKey:@"CFBundleName"];
+    }
+    return app_Name;
+}
+
 + (void)tenderbtn:(UIButton *)tenderBtn updateWithBidStatus:(int)bid_status
 {
     NSString *btnTitle = nil;

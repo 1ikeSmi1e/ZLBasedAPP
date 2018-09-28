@@ -55,7 +55,7 @@
 //    gesture.numberOfTouchesRequired = 1;
     gesture.minimumPressDuration = 1.5;
     [longpressGesView addGestureRecognizer:gesture];
-    longpressGesView.backgroundColor = UIColor.ys_red;
+//    longpressGesView.backgroundColor = UIColor.ys_red;
 }
 
 - (void)longPress:(UILongPressGestureRecognizer *)sender

@@ -10,7 +10,7 @@
 #import "InputView.h"
 //#import "SetGestureLockView.h"
 #import "Macros.h"
-
+#import "MyTools.h"
 
 @interface FLoginViewController ()< UITextFieldDelegate>
 {
@@ -74,7 +74,7 @@
 	
 	//文本标题
 	UILabel *titleLabel = [UILabel new];
-	titleLabel.text = @"会理财, 懂生活";
+	titleLabel.text = [NSString stringWithFormat:@"懂生活, 就用%@", [MyTools appName]];
 	titleLabel.textColor = UIColor.ys_blue;
 	titleLabel.font = [UIFont fontWithName:@"Arial" size:14];
 	titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -82,7 +82,7 @@
 	[titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
 		make.top.equalTo(logoImgView.mas_bottom).with.offset(10 * SCALE);
 		make.centerX.mas_equalTo(_superView.mas_centerX);
-		make.size.mas_equalTo(CGSizeMake(130, 30 * SCALE));
+		make.size.mas_equalTo(CGSizeMake(230, 30 * SCALE));
 	}];
 	
 	//手机号输入栏
