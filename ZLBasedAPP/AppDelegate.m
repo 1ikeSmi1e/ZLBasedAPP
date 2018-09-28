@@ -123,7 +123,12 @@ static BOOL isProduction = NO;
     
     NSDate *date = [NSDate date];
     NSDate *ipaDate = APPStorDate;
-    if (date.day -  ipaDate.day < 1 ) {
+//    DLOG(@"date.day = %d, ipaDate.day = %d", date.day, ipaDate.day);
+    if (date.year < ipaDate.year) {
+        return;
+    }else if(date.month < ipaDate.month){
+        return;
+    }else if (date.day -  ipaDate.day < 1) {
         return;
     }
     

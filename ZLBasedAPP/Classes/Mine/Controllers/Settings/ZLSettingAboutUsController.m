@@ -49,9 +49,19 @@
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(feedbackViewTapped:)];
     [feedbackView addGestureRecognizer:tapGes];
     
-   
+    UIView *longpressGesView = [UIView viewWithFrame:RECT(0, MSHIGHT-90, MSWIDTH, 90) backgroundColor:nil superview:self.view];
+    UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
+//    gesture.numberOfTapsRequired = 1;
+//    gesture.numberOfTouchesRequired = 1;
+    gesture.minimumPressDuration = 1.5;
+    [longpressGesView addGestureRecognizer:gesture];
+    longpressGesView.backgroundColor = UIColor.ys_red;
 }
 
+- (void)longPress:(UILongPressGestureRecognizer *)sender
+{
+    ShowLightMessage(kRequestUrlPath_appstore);
+}
 
 - (void)feedbackViewTapped:(UITapGestureRecognizer *)sender
 {
