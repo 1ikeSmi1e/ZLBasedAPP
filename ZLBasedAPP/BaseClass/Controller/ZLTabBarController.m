@@ -27,10 +27,10 @@
     ZLNavigationController *nav1 = [[ZLNavigationController alloc] initWithRootViewController:home];
     [self addChildViewController:nav1];
 
-    FCounterViewController *vender = [[FCounterViewController alloc] init];
-    vender.title = @"计算器";
-    ZLNavigationController *nav2 = [[ZLNavigationController alloc] initWithRootViewController:vender];
-    [self addChildViewController:nav2];
+//    FCounterViewController *vender = [[FCounterViewController alloc] init];
+//    vender.title = @"计算器";
+//    ZLNavigationController *nav2 = [[ZLNavigationController alloc] initWithRootViewController:vender];
+//    [self addChildViewController:nav2];
 
     
     ZLTouTiaoNewsController *TiaoNews = [[ZLTouTiaoNewsController alloc] init];
@@ -49,8 +49,8 @@
     }
     UITabBarItem *tabbarItem0 = [self getBarItemWithTitle:@"首页" imageName:@"Tabbar_home_unselected"];
     nav1.tabBarItem = tabbarItem0;
-    UITabBarItem *tabbarItem1 = [self getBarItemWithTitle:@"投资计算" imageName:@"Tabbar_finance_unselected"];
-    nav2.tabBarItem = tabbarItem1;
+//    UITabBarItem *tabbarItem1 = [self getBarItemWithTitle:@"投资计算" imageName:@"Tabbar_finance_unselected"];
+//    nav2.tabBarItem = tabbarItem1;
     UITabBarItem *tabbarItem2 = [self getBarItemWithTitle:@"我的" imageName:@"Tabbar_my_unselected"];
     nav3.tabBarItem = tabbarItem2;
 

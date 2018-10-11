@@ -22,11 +22,13 @@
 #import <AVFoundation/AVFoundation.h>
 #import "ZTAppCalculatorViewController.h"
 #import "ZLQRCodeGeneratorController.h"
+#import "FHouseCounterViewController.h"
 
 #define baseUrl @"https://wechat.meipenggang.com"
 @interface FHomeViewController ()
 
 @property (nonatomic, strong) NSMutableArray *toolArr;
+@property (nonatomic, strong) NSMutableArray *caculatorArr;
 @property (nonatomic, weak) HomeHeader *header;
 @end
 static NSString * const reuseIdentifier = @"FHomeCell";
@@ -39,14 +41,29 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     [self initView];
     
     ProductItem *itme1 = [ProductItem itemWithTitle:@"利率看板" icon:@"Home_interest"];
-    ProductItem *itme2 = [ProductItem itemWithTitle:@"记一笔" icon:@"Home_takeRecord"];
+    ProductItem *itme2 = [ProductItem itemWithTitle:@"快速记账" icon:@"Home_takeRecord"];
+    self.dataArray = @[itme1, itme2].mutableCopy;
+    
+    
+    
     ProductItem *itme3 = [ProductItem itemWithTitle:@"二维码扫描" icon:@"Home_QRScan"];
     ProductItem *itme4 = [ProductItem itemWithTitle:@"便利计算器" icon:@"Home_caculator"];
     ProductItem *itme5 = [ProductItem itemWithTitle:@"二维码生成器" icon:@"Home_QRCodeGenerator"];
+   
     [self.toolArr addObject:itme3];
     [self.toolArr addObject:itme4];
     [self.toolArr addObject:itme5];
-    self.dataArray = @[itme1, itme2].mutableCopy;
+   
+    
+    ProductItem *itme6 = [ProductItem itemWithTitle:@"存款计算器" icon:@"Home_depositCaculator"];
+    ProductItem *itme7 = [ProductItem itemWithTitle:@"房贷计算器" icon:@"Home_buyHourseCaculator"];
+    ProductItem *itme8 = [ProductItem itemWithTitle:@"普通贷款计算器" icon:@"Home_loanCaculator"];
+    ProductItem *itme9 = [ProductItem itemWithTitle:@"投资收益计算器" icon:@"Home_earningCaculator"];
+    [self.caculatorArr addObject:itme6];
+    [self.caculatorArr addObject:itme7];
+    [self.caculatorArr addObject:itme8];
+    [self.caculatorArr addObject:itme9];
+    
     self.header.imageURLStringsGroup = @[
 //                                         @"https://static.weijinzaixian.com/ad_0603403dc18654ec40c34a63c5eb5dd8.jpg",
                                          @"Home_banner1",
@@ -57,11 +74,6 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self requestData];
 //    });
-    
-   
-    
-    
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -77,6 +89,7 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     self.tableView = tableView;
     tableView.tableFooterView = [UIView new];
     tableView.estimatedRowHeight = tableView.rowHeight = 50.f;
+    self.tableView.contentInset = EDGEINSET(0, 0, 20, 0);
     if (@available(iOS 11.0, *)) {
         
         self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
@@ -149,7 +162,7 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 2;
+    return 3;
 }
 
 - (CGFloat )tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
@@ -157,7 +170,7 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
-    if (section == 1) {
+    if (section == 1 || section == 2) {
         return 50.f;
     }
     return 0.2f;
@@ -166,7 +179,10 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     if (section == 1) {
         return @"工具箱";
+    }else if (section == 2) {
+        return @"计算器";
     }
+    
     return nil;
 }
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -183,6 +199,8 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
     
     if (section == 1) {
         return self.toolArr.count;
+    }else if (section == 2) {
+        return self.caculatorArr.count;
     }
     return self.dataArray.count;
 }
@@ -210,12 +228,18 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
             return cell;
         }
         
-    }else{
-        
-        
+    }else if(indexPath.section == 1){
         
         FHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
         ProductItem *itme1 = self.toolArr[indexPath.row];
+        
+        cell.titleL.text = itme1.title;
+        cell.imgV.image = [UIImage imageNamed:itme1.icon];
+        return cell;
+    }else{
+        
+        FHomeCell *cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+        ProductItem *itme1 = self.caculatorArr[indexPath.row];
         
         cell.titleL.text = itme1.title;
         cell.imgV.image = [UIImage imageNamed:itme1.icon];
@@ -256,7 +280,7 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
             controller.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:controller animated:YES];
         }
-    }else{
+    }else  if (indexPath.section == 1) {
         
         if (indexPath.row == 0) {
             if (!AppDelegateInstance.userInfo) {
@@ -280,6 +304,30 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
             
             ZLQRCodeGeneratorController *controller =  [[ZLQRCodeGeneratorController alloc] init];
         
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        }
+        
+    }else if(indexPath.section == 2){
+        
+        UIStoryboard *homeStoryboard = [UIStoryboard storyboardWithName:@"Counters" bundle:nil];
+        if (indexPath.row == 0){//存款计算器
+            
+            UIViewController *controller = [homeStoryboard instantiateViewControllerWithIdentifier:@"SaveCounter"];
+            //            ZLQRCodeGeneratorController *controller =  [[ZLQRCodeGeneratorController alloc] init];
+            
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if (indexPath.row == 1){//房贷计算器
+            FHouseCounterViewController *controller = [[FHouseCounterViewController alloc] init];
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if (indexPath.row == 2){//普通贷款计算器
+            UIViewController *controller = [homeStoryboard instantiateViewControllerWithIdentifier:@"CommonCounter"];
+            controller.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:controller animated:YES];
+        }else if (indexPath.row == 3){// 投资收益计算器
+            UIViewController *controller = [homeStoryboard instantiateViewControllerWithIdentifier:@"FinanceCounter"];
             controller.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:controller animated:YES];
         }
@@ -356,5 +404,14 @@ static NSString * const reuseIdentifier2 = @"FHomeNewsCell";
         
     }
     return _toolArr;
+}
+
+- (NSMutableArray *)caculatorArr
+{
+    if (!_caculatorArr) {
+        self.caculatorArr = [NSMutableArray array];
+        
+    }
+    return _caculatorArr;
 }
 @end
