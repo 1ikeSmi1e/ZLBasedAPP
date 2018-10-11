@@ -288,6 +288,8 @@
 		845BC85D2159E7A900C9674C /* BRAddressModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC7E92159E7A900C9674C /* BRAddressModel.m */; };
 		845BC85E2159E7A900C9674C /* BRPickerView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 845BC7EB2159E7A900C9674C /* BRPickerView.bundle */; };
 		845BC85F2159E7A900C9674C /* BRAddressPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 845BC7ED2159E7A900C9674C /* BRAddressPickerView.m */; };
+		846C5810216F332A006AF965 /* QuickLook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 846C580F216F332A006AF965 /* QuickLook.framework */; };
+		846C5811216F3683006AF965 /* SHB_privacyPolicy.docx in Resources */ = {isa = PBXBuildFile; fileRef = 846C580E216F31A1006AF965 /* SHB_privacyPolicy.docx */; };
 		8491D4B7215C82390045E2EA /* ZLSettingPrivacyController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4B5215C82390045E2EA /* ZLSettingPrivacyController.m */; };
 		8491D4B8215C82390045E2EA /* ZLSettingPrivacyController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8491D4B6215C82390045E2EA /* ZLSettingPrivacyController.xib */; };
 		8491D4BB215CAFF40045E2EA /* ZLTouTiaoNewsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8491D4BA215CAFF40045E2EA /* ZLTouTiaoNewsController.m */; };
@@ -856,6 +858,8 @@
 		845BC7ED2159E7A900C9674C /* BRAddressPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRAddressPickerView.m; sourceTree = "<group>"; };
 		845BC7EE2159E7A900C9674C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		845BC7EF2159E7A900C9674C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		846C580E216F31A1006AF965 /* SHB_privacyPolicy.docx */ = {isa = PBXFileReference; lastKnownFileType = file; path = SHB_privacyPolicy.docx; sourceTree = "<group>"; };
+		846C580F216F332A006AF965 /* QuickLook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickLook.framework; path = System/Library/Frameworks/QuickLook.framework; sourceTree = SDKROOT; };
 		8491D4B4215C82390045E2EA /* ZLSettingPrivacyController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLSettingPrivacyController.h; sourceTree = "<group>"; };
 		8491D4B5215C82390045E2EA /* ZLSettingPrivacyController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLSettingPrivacyController.m; sourceTree = "<group>"; };
 		8491D4B6215C82390045E2EA /* ZLSettingPrivacyController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZLSettingPrivacyController.xib; sourceTree = "<group>"; };
@@ -878,6 +882,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846C5810216F332A006AF965 /* QuickLook.framework in Frameworks */,
 				84534EB9215B32D1000C1869 /* libresolv.tbd in Frameworks */,
 				84534EB7215B32C7000C1869 /* UserNotifications.framework in Frameworks */,
 				84534EB5215B32B3000C1869 /* AdSupport.framework in Frameworks */,
@@ -1183,6 +1188,7 @@
 		84534EA5215B3265000C1869 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				846C580F216F332A006AF965 /* QuickLook.framework */,
 				84534EB8215B32D1000C1869 /* libresolv.tbd */,
 				84534EB6215B32C7000C1869 /* UserNotifications.framework */,
 				84534EB4215B32B3000C1869 /* AdSupport.framework */,
@@ -1770,6 +1776,7 @@
 				8491D4CF215CD1260045E2EA /* News_banner_2.png */,
 				8491D4D0215CD1260045E2EA /* News_banner_3.png */,
 				8491D4D2215CD1270045E2EA /* News_banner_4.png */,
+				846C580E216F31A1006AF965 /* SHB_privacyPolicy.docx */,
 				8441347C215A475600AF4D99 /* AccoutCategeries.plist */,
 				84413478215A475500AF4D99 /* F_default_201805.txt */,
 				84413479215A475600AF4D99 /* F_default_201806.txt */,
@@ -2360,6 +2367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846C5811216F3683006AF965 /* SHB_privacyPolicy.docx in Resources */,
 				8454B58C215DD535002A6C8D /* ZLQRResultHistoryCell.xib in Resources */,
 				845BC8432159E7A900C9674C /* SVProgressHUD.bundle in Resources */,
 				844133D7215A41C100AF4D99 /* FRateViewController.xib in Resources */,

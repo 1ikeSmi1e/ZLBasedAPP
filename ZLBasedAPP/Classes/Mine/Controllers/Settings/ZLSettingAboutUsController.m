@@ -8,9 +8,10 @@
 
 #import "ZLSettingAboutUsController.h"
 #import "ZLSettingFeedBackController.h"
+#import <QuickLook/QuickLook.h>
 
 
-@interface ZLSettingAboutUsController ()
+@interface ZLSettingAboutUsController ()<QLPreviewControllerDataSource, QLPreviewControllerDelegate>
 
 @end
 
@@ -49,6 +50,19 @@
     UITapGestureRecognizer *tapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(feedbackViewTapped:)];
     [feedbackView addGestureRecognizer:tapGes];
     
+    UIView *privacyView = [UIView viewWithFrame:RECT(0, feedbackView.maxY+1, MSWIDTH, 50) backgroundColor:AJWhiteColor superview:self.view];
+    UIImageView *privacyimgV = [UIImageView imageViewWithFrame:RECT(13, 0, 20, 50) imageFile:@"Mine_AboutUs_privacy" superview:privacyView];
+    privacyimgV.contentMode = UIViewContentModeScaleAspectFit;
+    UILabel *label2 = [UILabel labelWithFrame:RECT(feedbackimgV.maxX + 5, 0, 100, 50) text:@"隐私政策" textColor:UIColor.ys_black textFont:15 fitWidth:NO superview:privacyView];
+    feedbackimgV.contentMode = UIViewContentModeScaleAspectFit;
+    
+    UIImageView *imgVArrow2 = [UIImageView imageViewWithFrame:RECT(feedbackView.width - imgVW - 15, 0, imgVW, feedbackView.height) imageFile:@"Payments_arrow" superview:privacyView];
+    imgVArrow2.contentMode = UIViewContentModeScaleAspectFit;
+    
+    UITapGestureRecognizer *tapGes2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(privacyViewTapped:)];
+    [privacyView addGestureRecognizer:tapGes2];
+    
+    
     UIView *longpressGesView = [UIView viewWithFrame:RECT(0, MSHIGHT-90, MSWIDTH, 90) backgroundColor:nil superview:self.view];
     UILongPressGestureRecognizer *gesture = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
 //    gesture.numberOfTapsRequired = 1;
@@ -68,5 +82,44 @@
     
     ZLSettingFeedBackController *controller = [ZLSettingFeedBackController new];
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+- (void)privacyViewTapped:(UITapGestureRecognizer *)sender
+{
+    QLPreviewController *QLPVC = [[QLPreviewController alloc] init];
+    QLPVC.dataSource = self;
+    
+    ZLNavBar *bar = [[ZLNavBar alloc] initWithTitle:@"隐私政策" leftName:nil rightName:nil delegate:QLPVC];
+    [QLPVC.view addSubview:bar];
+//    ZLNavigationController *navController = [[ZLNavigationController alloc] initWithRootViewController:QLPVC];
+    [self.navigationController pushViewController:QLPVC animated:YES];
+//    [self presentViewController:navController animated:YES completion:^{
+//        navController.navigationBar.hidden = NO;
+//        QLPVC.nav
+////        QLPVC.navigationController.navigationBar.tintColor = [UIColor ys_blue];
+//    }];
+}
+
+- (NSInteger)numberOfPreviewItemsInPreviewController:(QLPreviewController *)controller{
+    return 1;
+}
+
+- (id <QLPreviewItem>)previewController:(QLPreviewController *)controller previewItemAtIndex:(NSInteger)index{
+    
+    NSString *wordTextPath = [[NSBundle mainBundle] pathForResource:@"SHB_privacyPolicy" ofType:@"docx"];
+    NSURL *url = [NSURL fileURLWithPath:wordTextPath];
+    return url;
+}
+
+- (void)previewControllerWillDismiss:(QLPreviewController *)controller{
+    DLOG_METHOD;
+}
+
+
+/*!
+ * @abstract Invoked after the preview controller is closed.
+ */
+- (void)previewControllerDidDismiss:(QLPreviewController *)controller{
+    DLOG_METHOD;
 }
 @end
